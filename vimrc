@@ -23,6 +23,8 @@ set undoreload=10000
 nnoremap j gj
 nnoremap k gk
 
+call tcomment#DefineType('java', '// %s')
+
 let delimitMate_expand_cr = 1 "Expand 1 line down on enter pressed"
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 
