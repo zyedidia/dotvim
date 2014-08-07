@@ -1,2 +1,5 @@
 # Ignore the undo file
 undo/
+
+# Ignore swap files
+*.swp

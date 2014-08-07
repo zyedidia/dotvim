@@ -10,3 +10,5 @@ cd ~/.vim
 git submodule init
 git submodule update
 ```
+
+To get the color scheme working you may have to install the solarized colorscheme for your terminal: http://ethanschoonover.com/solarized
