@@ -16,9 +16,11 @@ set ttyfast
 "set relativenumber
 set scrolloff=3
 
-set undodir=~/.vim/undo
-set undofile
-set undoreload=10000
+if (v:version > 703)
+	set undodir=~/.vim/undo
+	set undofile
+	set undoreload=10000
+endif
 
 nnoremap j gj
 nnoremap k gk
