@@ -2,6 +2,8 @@ execute pathogen#infect()
 
 "Sets
 set showmatch "Show matching braces"
+set ignorecase
+set smartcase
 set undolevels=1000
 set number "Show the line numbers"
 set tabstop=4 "Tab is 4 spaces"
@@ -13,7 +15,6 @@ set showcmd
 set autoindent
 set splitbelow
 set ttyfast
-"set relativenumber
 set scrolloff=3
 
 if (v:version > 703)
@@ -70,7 +71,14 @@ function! IndentFile()
 	execute "normal! mqHmwgg=G`wzt`q"
 endfunction
 
+function! OpenAll()
+	execute "lcd %:p:h"
+	execute "args *.*" 
+	execute "tab all"
+endfunction
+
 nnoremap <expr> i IndentWithI()
-nnoremap <Leader>= :call IndentFile() <CR>
+nnoremap <Leader>= :call IndentFile()<CR>
+nnoremap <Leader>t :call OpenAll()<CR>
 
 command SynCheck :w | :SyntasticCheck
