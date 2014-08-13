@@ -15,13 +15,16 @@ set autoindent        "Use autoindentation
 set splitbelow        "Make horizontal splits below instead of above
 set ttyfast           "We are using a fast terminal
 set scrolloff=3       "Start scrolling when the cursor is 3 lines away from the bottom of the window
+set wrap              "Wrap long lines
 
-filetype indent on "Use filetype indentation
+filetype indent on    "Use filetype indentation
 filetype plugin indent on "Allow plugins to use filetype indentation
-syntax on "Turn on syntax highlighting
+syntax on             "Turn on syntax highlighting
 
-set background=light "Use a light background
+set background=light  "Use a light background
 colorscheme solarized "Use the solarized colorscheme
+
+set timeoutlen=0
 
 "Persistent undo isn't available on < vim 7.3
 if (v:version > 703)
