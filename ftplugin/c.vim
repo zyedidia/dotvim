@@ -1,8 +1,14 @@
-function! CRun()
+function! CRun(...)
+	if (a:0 > 0)
+		let args=a:1
+	else
+		let args=""
+	endif
+
 	execute "w"
 	execute "!make %:r"
-	execute "!./%:r"
+	execute "!./%:r ".args
 endfunction
 
-command! CRun :call CRun()
+command! -nargs=* CRun :call CRun(<f-args>)
 

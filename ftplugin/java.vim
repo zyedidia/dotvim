@@ -1,7 +1,13 @@
-function! JRun()
+function! JRun(...)
+	if (a:0 > 0)
+		let args=a:1
+	else 
+		let args=""
+	endif
+
 	execute "w"
 	execute "!javac %"
-	execute "!java %:r"
+	execute "!java %:r ".args
 endfunction
 
-command! JRun :call JRun()
+command! -nargs=* JRun :call JRun(<f-args>)
