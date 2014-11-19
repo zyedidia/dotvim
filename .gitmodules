@@ -34,3 +34,6 @@
 [submodule "bundle/snippets"]
 	path = bundle/snippets
 	url = https://github.com/honza/vim-snippets.git
+[submodule "bundle/multipleCursors"]
+	path = bundle/multipleCursors
+	url = https://github.com/terryma/vim-multiple-cursors.git

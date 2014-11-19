@@ -17,6 +17,8 @@ set ttyfast           "We are using a fast terminal
 set scrolloff=3       "Start scrolling when the cursor is 3 lines away from the bottom of the window
 set wrap              "Wrap long lines
 set mat=1             "Set the time to show matching braces to 1
+set laststatus=2
+set cursorline
 
 filetype indent on    "Use filetype indentation
 filetype plugin indent on "Allow plugins to use filetype indentation
@@ -127,7 +129,7 @@ endfunction
 function! OpenInMacVim()
 	execute "mksession! ~/.session.vim"
 	execute "silent !mvim -S ~/.session.vim"
-	execute "wq"
+	execute "wqa"
 endfunction
 
 "Google search a word
