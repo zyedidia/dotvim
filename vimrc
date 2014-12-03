@@ -16,9 +16,10 @@ set splitbelow        "Make horizontal splits below instead of above
 set ttyfast           "We are using a fast terminal
 set scrolloff=3       "Start scrolling when the cursor is 3 lines away from the bottom of the window
 set wrap              "Wrap long lines
-set mat=1             "Set the time to show matching braces to 1
-set laststatus=2
-set cursorline
+set mat=1             "Set the time to show matching braces to 1 second
+set laststatus=2      "Always display the status line
+set cursorline        "Highlight the current line
+set autoread          "Automatically reload the file when it is changed from an outside program
 
 filetype indent on    "Use filetype indentation
 filetype plugin indent on "Allow plugins to use filetype indentation
@@ -43,19 +44,22 @@ map <Leader>f <Plug>(easymotion-f)
 map <C-n> :NERDTreeToggle<CR>
 
 "Create a line above the cursor from normal mode
-nmap <S-Enter> O<Esc>
+nnoremap <S-Enter> O<Esc>
 "Create a line below the cursor from normal mode
-nmap <CR> o<Esc>
+nnoremap <CR> o<Esc>
+
+nnoremap K i<Enter><Esc>
 "Remap the arrow keys to change split windows
-nmap <up> <C-w>k
-nmap <down> <C-w>j
-nmap <left> <C-w>h
-nmap <right> <C-w>l
+nnoremap <up> <C-w>k
+nnoremap <down> <C-w>j
+nnoremap <left> <C-w>h
+nnoremap <right> <C-w>l
 
 "Remap some snipmate triggers
 imap <C-J> <Plug>snipMateNextOrTrigger
 smap <C-J> <Plug>snipMateNextOrTrigger
 imap <C-K> <Plug>snipMateTrigger
+imap <C-d> <Plug>snipMateBack
 
 "Remap ctrl-c to esc
 inoremap <C-c> <Esc>

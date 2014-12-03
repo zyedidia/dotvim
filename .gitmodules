@@ -37,3 +37,9 @@
 [submodule "bundle/multipleCursors"]
 	path = bundle/multipleCursors
 	url = https://github.com/terryma/vim-multiple-cursors.git
+[submodule "bundle/vim-arduino-ino"]
+	path = bundle/vim-arduino-ino
+	url = https://github.com/jplaut/vim-arduino-ino.git
+[submodule "bundle/Conque-Shell"]
+	path = bundle/Conque-Shell
+	url = https://github.com/vim-scripts/Conque-Shell.git
