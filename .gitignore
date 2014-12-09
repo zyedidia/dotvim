@@ -3,3 +3,5 @@ undo/*
 
 # Ignore swap files
 *.swp
+
+bundle/snake

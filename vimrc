@@ -1,3 +1,4 @@
+" Welcome to my vimrc
 execute pathogen#infect()
 
 set showmatch         "Show matching curly braces
@@ -31,8 +32,8 @@ colorscheme solarized "Use the solarized colorscheme
 "Persistent undo isn't available on < vim 7.3
 if (v:version > 703)
 	"Make an undo directory if it does not exist
-	if !isdirectory($HOME."/.vim/undo")
-		call mkdir($HOME."/.vim/undo", "p")
+	if !isdirectory($HOME . "/.vim/undo")
+		call mkdir($HOME . "/.vim/undo", "p")
 	endif
 	set undodir=~/.vim/undo "Set the undo directory
 	set undofile "Turn on persistent undo
@@ -47,7 +48,7 @@ map <C-n> :NERDTreeToggle<CR>
 nnoremap <S-Enter> O<Esc>
 "Create a line below the cursor from normal mode
 nnoremap <CR> o<Esc>
-
+"Split a line
 nnoremap K i<Enter><Esc>
 "Remap the arrow keys to change split windows
 nnoremap <up> <C-w>k
