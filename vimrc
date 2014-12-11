@@ -26,7 +26,8 @@ filetype indent on    "Use filetype indentation
 filetype plugin indent on "Allow plugins to use filetype indentation
 syntax on             "Turn on syntax highlighting
 
-set background=light  "Use a light background
+set t_Co=256
+set background=dark  "Use a dark background
 colorscheme solarized "Use the solarized colorscheme
 
 "Persistent undo isn't available on < vim 7.3
@@ -82,6 +83,7 @@ nnoremap <Leader>t :call OpenAll()<CR>
 
 "Plugin customizations
 call tcomment#DefineType('java', '// %s')
+set backspace=2
 let delimitMate_expand_cr = 1 "Expand 1 line down on enter pressed
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 
