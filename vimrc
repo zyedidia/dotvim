@@ -79,7 +79,7 @@ nnoremap <C-c> <Esc>
 "Indent the cursor correctly when going into insert mode on an empty line
 nnoremap <expr> i IndentWithI()
 nnoremap <Leader>= :call IndentFile()<CR>
-nnoremap <Leader>t :call OpenAll()<CR>
+nnoremap <Leader>t :call OpenAll('*')<CR>
 
 "Plugin customizations
 call tcomment#DefineType('java', '// %s')
@@ -114,9 +114,9 @@ function! IndentFile()
 endfunction
 
 "Open all the files in the current file's directory
-function! OpenAll()
+function! OpenAll(ext)
 	execute "lcd %:p:h"
-	execute "args *.*" 
+	execute "args *." . a:ext 
 	execute "tab all"
 endfunction
 

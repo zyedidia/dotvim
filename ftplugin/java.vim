@@ -10,4 +10,4 @@ function! JRun(...)
 	execute "!java %:r ".args
 endfunction
 
-command! -nargs=* JRun :call JRun(<f-args>)
+command! -nargs=* Run :call JRun(<f-args>)

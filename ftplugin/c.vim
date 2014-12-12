@@ -10,5 +10,5 @@ function! CRun(...)
 	execute "!./%:r ".args
 endfunction
 
-command! -nargs=* CRun :call CRun(<f-args>)
+command! -nargs=* Run :call CRun(<f-args>)
 

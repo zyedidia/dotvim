@@ -9,4 +9,4 @@ function! PyRun(...)
 	execute "!python % ".args
 endfunction
 
-command! -nargs=* PyRun :call PyRun(<f-args>)
+command! -nargs=* Run :call PyRun(<f-args>)
