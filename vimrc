@@ -8,7 +8,7 @@ set undolevels=1000   "Set the number of undos that are remembered
 set number            "Show line numbers
 set tabstop=4         "Use 4 space tabs
 set shiftwidth=4      "Use 4 space tabs
-set guifont=Menlo:h13 "Use Menlo size 13 font
+set guifont=Monaco:h13 "Use Menlo size 13 font
 set incsearch         "Incremental search: jump to the first occurrence of search while the user is still searching
 set mouse=a           "Enable the mouse
 set showcmd           "Show the current command in the bottom right
@@ -21,6 +21,7 @@ set mat=1             "Set the time to show matching braces to 1 second
 set laststatus=2      "Always display the status line
 set cursorline        "Highlight the current line
 set autoread          "Automatically reload the file when it is changed from an outside program
+set swb=usetab
 
 filetype indent on    "Use filetype indentation
 filetype plugin indent on "Allow plugins to use filetype indentation
@@ -78,8 +79,16 @@ nnoremap k gk
 nnoremap <C-c> <Esc>
 "Indent the cursor correctly when going into insert mode on an empty line
 nnoremap <expr> i IndentWithI()
+"Correctly indent the entire file
 nnoremap <Leader>= :call IndentFile()<CR>
+"Open all files in the dir in new tabs
 nnoremap <Leader>t :call OpenAll('*')<CR>
+"Open vimrc file
+nnoremap <Leader>v :vsp ~/.vim/vimrc<CR>
+"Source vimrc file
+nnoremap <Leader>sv :source ~/.vim/vimrc<CR>
+
+autocmd BufEnter,BufRead *.lang set ft=java
 
 "Plugin customizations
 call tcomment#DefineType('java', '// %s')
@@ -88,7 +97,8 @@ let delimitMate_expand_cr = 1 "Expand 1 line down on enter pressed
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 
 "User defined commands
-command SynCheck :call SynCheck() "Check for and report syntax errors
+command! SynCheck :call SynCheck() "Check for and report syntax errors
+command! -nargs=1 -complete=buffer Tab :tab sbuf <args>
 
 "---------------------------------------
 "|          Helper functions           |
