@@ -43,3 +43,12 @@
 [submodule "bundle/Conque-Shell"]
 	path = bundle/Conque-Shell
 	url = https://github.com/vim-scripts/Conque-Shell.git
+[submodule "bundle/elm.vim"]
+	path = bundle/elm.vim
+	url = https://github.com/lambdatoast/elm.vim.git
+[submodule "bundle/vim-surround"]
+	path = bundle/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "bundle/vim-multiple-cursors"]
+	path = bundle/vim-multiple-cursors
+	url = https://github.com/terryma/vim-multiple-cursors.git

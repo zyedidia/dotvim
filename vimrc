@@ -88,13 +88,23 @@ nnoremap <Leader>v :vsp ~/.vim/vimrc<CR>
 "Source vimrc file
 nnoremap <Leader>sv :source ~/.vim/vimrc<CR>
 
-autocmd BufEnter,BufRead *.lang set ft=java
+nnoremap <Leader>w :w<CR>
+
+autocmd BufEnter,BufRead *.lang set syn=java
+autocmd BufEnter,BufRead *.elm set syn=haskell
 
 "Plugin customizations
 call tcomment#DefineType('java', '// %s')
 set backspace=2
 let delimitMate_expand_cr = 1 "Expand 1 line down on enter pressed
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+map <Leader>n :NERDTreeToggle<CR>
+
+let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_next_key='<C-n>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<C-c>'
 
 "User defined commands
 command! SynCheck :call SynCheck() "Check for and report syntax errors
