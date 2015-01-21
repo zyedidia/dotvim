@@ -58,6 +58,9 @@ nnoremap <down> <C-w>j
 nnoremap <left> <C-w>h
 nnoremap <right> <C-w>l
 
+nnoremap <C-k> {
+nnoremap <C-j> }
+
 "Remap some snipmate triggers
 imap <C-J> <Plug>snipMateNextOrTrigger
 smap <C-J> <Plug>snipMateNextOrTrigger
