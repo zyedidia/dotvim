@@ -43,7 +43,6 @@ if (v:version > 703)
 endif
 
 "Mappings
-map <Leader>f <Plug>(easymotion-f)
 map <C-n> :NERDTreeToggle<CR>
 
 "Create a line above the cursor from normal mode
@@ -59,7 +58,9 @@ nnoremap <left> <C-w>h
 nnoremap <right> <C-w>l
 
 nnoremap <C-k> {
+vnoremap <C-k> {
 nnoremap <C-j> }
+vnoremap <C-j> }
 
 "Remap some snipmate triggers
 imap <C-J> <Plug>snipMateNextOrTrigger
@@ -75,6 +76,8 @@ vnoremap <Space> :call ExecMacro()<CR>
 "Remap ctrl-k and ctrl-j to go up and down in command-line-mode
 cnoremap <C-k> <up>
 cnoremap <C-j> <down>
+nnoremap 0 ^
+nnoremap ^ 0
 
 "Remap j and k to operate on visual lines
 nnoremap j gj
@@ -95,6 +98,7 @@ nnoremap <Leader>w :w<CR>
 
 autocmd BufEnter,BufRead *.lang set syn=java
 autocmd BufEnter,BufRead *.elm set syn=haskell
+autocmd VimResized exec "<C-l>"
 
 "Plugin customizations
 call tcomment#DefineType('java', '// %s')
@@ -102,6 +106,8 @@ set backspace=2
 let delimitMate_expand_cr = 1 "Expand 1 line down on enter pressed
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 map <Leader>n :NERDTreeToggle<CR>
+
+let g:runScript = "run.sh"
 
 let g:multi_cursor_use_default_mapping=0
 let g:multi_cursor_next_key='<C-n>'
@@ -162,12 +168,6 @@ function! OpenInMacVim()
 	execute "wqa"
 endfunction
 
-"Google search a word
-function! GoogleSearch(searchterm)
-	exec "!open /Applications/Firefox.app/ http://google.com/?gws_rd=ssl\\#q=".a:searchterm
-endfunction
-
-"Search for documentation of word
-function! DocSearch(searchterm)
-	exec "!open /Applications/Firefox.app/ http://google.com/?gws_rd=ssl\\#q=".a:searchterm."+".split(expand("%"), "\\.")[1]
+function! RunScript()
+	execute "!bash " . g:runScript
 endfunction
