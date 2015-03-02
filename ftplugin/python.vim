@@ -1,6 +1,6 @@
 function! PyRun(...)
 	if (a:0 > 0)
-		let args=a:1
+		let args=join(a:000, ' ')
 	else
 		let args=""
 	endif

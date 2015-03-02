@@ -1,4 +1,4 @@
-function! CRun(...)
+function! DRun(...)
 	if (a:0 > 0)
 		let args=join(a:000, ' ')
 	else
@@ -6,9 +6,8 @@ function! CRun(...)
 	endif
 
 	execute "w"
-	execute "!make %:r"
+	execute "!dmd %"
 	execute "!./%:r ".args
 endfunction
 
-command! -nargs=* Run :call CRun(<f-args>)
-
+command! -nargs=* Run :call DRun(<f-args>)
