@@ -52,3 +52,6 @@
 [submodule "bundle/dart-vim"]
 	path = bundle/dart-vim
 	url = https://github.com/dart-lang/dart-vim-plugin.git
+[submodule "bundle/julia-vim"]
+	path = bundle/julia-vim
+	url = https://github.com/JuliaLang/julia-vim.git
