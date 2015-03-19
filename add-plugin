@@ -1,0 +1,8 @@
+#!/bin/bash
+
+pluginUrl=$1
+pluginName=$2
+
+git submodule add $pluginUrl bundle/$pluginName
+
+echo "Added $pluginName"

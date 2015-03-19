@@ -1,0 +1,9 @@
+#!/bin/bash
+
+pluginName=$1
+
+git submodule deinit -f bundle/$pluginName
+git rm -f bundle/$pluginName
+rm -rf .git/modules/bundle/$pluginName
+
+echo "Removed $pluginName"

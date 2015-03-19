@@ -70,7 +70,10 @@ imap <C-d> <Plug>snipMateBack
 
 "Remap ctrl-c to esc
 inoremap <C-c> <Esc>
-vnoremap <C-c> <Esc>
+vnoremap <Esc> <C-c>
+nnoremap <C-c> <Esc>
+nnoremap r<C-c> r<Esc>
+nnoremap <C-w><C-c> <C-w><Esc>
 "Make executing macros on selected lines easy by just pressing space
 vnoremap <Space> :call ExecMacro()<CR>
 "Remap ctrl-k and ctrl-j to go up and down in command-line-mode
@@ -82,7 +85,6 @@ nnoremap ^ 0
 "Remap j and k to operate on visual lines
 nnoremap j gj
 nnoremap k gk
-nnoremap <C-c> <Esc>
 "Indent the cursor correctly when going into insert mode on an empty line
 nnoremap <expr> i IndentWithI()
 "Correctly indent the entire file
@@ -96,6 +98,7 @@ nnoremap <Leader>sv :source ~/.vim/vimrc<CR>
 
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>r :Run<CR>
+nnoremap <Leader>s :SynCheck<CR>
 
 autocmd BufEnter,BufRead *.lang set syn=java
 autocmd BufEnter,BufRead *.elm set syn=haskell
@@ -105,9 +108,13 @@ call tcomment#DefineType('java', '// %s')
 set backspace=2
 let delimitMate_expand_cr = 1 "Expand 1 line down on enter pressed
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
-map <Leader>n :NERDTreeToggle<CR>
 
-let g:runScript = "run.sh"
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+map <Leader>n :NERDTreeToggle<CR>
 
 let g:multi_cursor_use_default_mapping=0
 let g:multi_cursor_next_key='<C-n>'
@@ -158,7 +165,7 @@ endfunction
 "Execute the last recorded macro (useful for using visual mode to execute
 "macros
 function! ExecMacro()
-	execute "normal @@"
+	execute "normal @q"
 endfunction
 
 "Open the current setup in MacVim
@@ -166,8 +173,4 @@ function! OpenInMacVim()
 	execute "mksession! ~/.session.vim"
 	execute "silent !mvim -S ~/.session.vim"
 	execute "wqa"
-endfunction
-
-function! RunScript()
-	execute "!bash " . g:runScript
 endfunction
