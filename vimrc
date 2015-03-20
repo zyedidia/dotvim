@@ -1,7 +1,6 @@
 " Welcome to my vimrc
 execute pathogen#infect()
 
-set showmatch         "Show matching curly braces
 set ignorecase        "Ignore case on searches
 set smartcase         "Use case sensitive search if there is a capital letter in the search
 set undolevels=1000   "Set the number of undos that are remembered
@@ -57,10 +56,15 @@ nnoremap <down> <C-w>j
 nnoremap <left> <C-w>h
 nnoremap <right> <C-w>l
 
+inoremap <C-w> <Esc><C-w>
+
 nnoremap <C-k> {
 vnoremap <C-k> {
 nnoremap <C-j> }
 vnoremap <C-j> }
+
+" Make pasting indent correctly
+nnoremap p p=`]
 
 "Remap some snipmate triggers
 imap <C-J> <Plug>snipMateNextOrTrigger
