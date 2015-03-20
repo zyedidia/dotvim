@@ -15,6 +15,7 @@ set mouse=a           "Enable the mouse
 set showcmd           "Show the current command in the bottom right
 set autoindent        "Use autoindentation
 set splitbelow        "Make horizontal splits below instead of above
+set splitright        "Make vertical splits on the right
 set ttyfast           "We are using a fast terminal
 set scrolloff=3       "Start scrolling when the cursor is 3 lines away from the bottom of the window
 set wrap              "Wrap long lines
@@ -22,7 +23,6 @@ set laststatus=2      "Always display the status line
 set cursorline        "Highlight the current line
 set autoread          "Automatically reload the file when it is changed from an outside program
 set swb=usetab
-
 
 filetype indent on    "Use filetype indentation
 filetype plugin indent on "Allow plugins to use filetype indentation
