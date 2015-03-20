@@ -1,6 +1,8 @@
 " Welcome to my vimrc
 execute pathogen#infect()
 
+set showmatch         "Show matching braces
+set mat=1             "Set the time to show matching braces to 1 second
 set ignorecase        "Ignore case on searches
 set smartcase         "Use case sensitive search if there is a capital letter in the search
 set undolevels=1000   "Set the number of undos that are remembered
@@ -16,11 +18,11 @@ set splitbelow        "Make horizontal splits below instead of above
 set ttyfast           "We are using a fast terminal
 set scrolloff=3       "Start scrolling when the cursor is 3 lines away from the bottom of the window
 set wrap              "Wrap long lines
-set mat=1             "Set the time to show matching braces to 1 second
 set laststatus=2      "Always display the status line
 set cursorline        "Highlight the current line
 set autoread          "Automatically reload the file when it is changed from an outside program
 set swb=usetab
+
 
 filetype indent on    "Use filetype indentation
 filetype plugin indent on "Allow plugins to use filetype indentation
@@ -117,6 +119,11 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+let loaded_matchparen = 1
+let g:ConqueTerm_CWInsert = 1
+let g:ConqueTerm_InsertOnEnter = 1
+let g:ConqueTerm_Color = 1
 
 map <Leader>n :NERDTreeToggle<CR>
 

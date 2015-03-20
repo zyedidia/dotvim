@@ -16,10 +16,10 @@ To get the color scheme working you may have to install the solarized colorschem
 ##Managing Plugins
 You can 
 * Add a plugin 
-```./add-plugin pluginURL pluginName```
+`./add-plugin pluginURL pluginName`
 
 * Remove a plugin 
-```./remove-plugin pluginName```
+`./remove-plugin pluginName`
 
 * Update plugins 
-```./update-plugins```
+`./update-plugins`
