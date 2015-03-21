@@ -1,6 +1,5 @@
 " Welcome to my vimrc
 execute pathogen#infect()
-call pathogen#helptags()
 
 set showmatch         "Show matching braces
 set mat=1             "Set the time to show matching braces to 1 second
@@ -58,8 +57,6 @@ nnoremap <up> <C-w>k
 nnoremap <down> <C-w>j
 nnoremap <left> <C-w>h
 nnoremap <right> <C-w>l
-
-inoremap <C-w> <Esc><C-w>
 
 nnoremap <C-k> {
 vnoremap <C-k> {
