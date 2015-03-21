@@ -110,7 +110,6 @@ autocmd BufEnter,BufRead *.lang set syn=java
 autocmd BufEnter,BufRead *.elm set syn=haskell
 
 "Plugin customizations
-call tcomment#DefineType('java', '// %s')
 set backspace=2
 let delimitMate_expand_cr = 1 "Expand 1 line down on enter pressed
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
