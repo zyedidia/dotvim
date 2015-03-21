@@ -66,12 +66,6 @@ vnoremap <C-j> }
 " Make pasting indent correctly
 nnoremap p p=`]
 
-"Remap some snipmate triggers
-imap <C-J> <Plug>snipMateNextOrTrigger
-smap <C-J> <Plug>snipMateNextOrTrigger
-imap <C-K> <Plug>snipMateTrigger
-imap <C-d> <Plug>snipMateBack
-
 "Remap ctrl-c to esc
 inoremap <C-c> <Esc>
 vnoremap <Esc> <C-c>
@@ -117,6 +111,11 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+"Remap some ultisnips triggers
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 let loaded_matchparen = 1
 let g:ConqueTerm_CWInsert = 1
