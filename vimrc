@@ -1,5 +1,6 @@
 " Welcome to my vimrc
 execute pathogen#infect()
+call pathogen#helptags()
 
 set showmatch         "Show matching braces
 set mat=1             "Set the time to show matching braces to 1 second
@@ -96,7 +97,7 @@ nnoremap <expr> i IndentWithI()
 "Correctly indent the entire file
 nnoremap <Leader>= :call IndentFile()<CR>
 "Open all files in the dir in new tabs
-nnoremap <Leader>t :call OpenAll('*')<CR>
+" nnoremap <Leader>t :call OpenAll('*')<CR>
 "Open vimrc file
 nnoremap <Leader>v :vsp ~/.vim/vimrc<CR>
 "Source vimrc file
@@ -108,6 +109,7 @@ nnoremap <Leader>s :SynCheck<CR>
 
 autocmd BufEnter,BufRead *.lang set syn=java
 autocmd BufEnter,BufRead *.elm set syn=haskell
+autocmd FileType julia set commentstring=#%s
 
 "Plugin customizations
 set backspace=2
