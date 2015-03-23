@@ -65,3 +65,6 @@
 [submodule "bundle/html"]
 	path = bundle/html
 	url = https://github.com/othree/html5.vim
+[submodule "bundle/vim-pasta"]
+	path = bundle/vim-pasta
+	url = https://github.com/sickill/vim-pasta

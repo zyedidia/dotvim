@@ -63,9 +63,6 @@ vnoremap <C-k> {
 nnoremap <C-j> }
 vnoremap <C-j> }
 
-" Make pasting indent correctly
-nnoremap p p=`]
-
 "Remap ctrl-c to esc
 inoremap <C-c> <Esc>
 vnoremap <Esc> <C-c>
