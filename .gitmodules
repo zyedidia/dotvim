@@ -62,6 +62,7 @@
 [submodule "bundle/vim-javascript"]
 	path = bundle/vim-javascript
 	url = https://github.com/pangloss/vim-javascript
+	ignore = dirty
 [submodule "bundle/html"]
 	path = bundle/html
 	url = https://github.com/othree/html5.vim

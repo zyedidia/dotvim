@@ -47,9 +47,7 @@ endif
 map <C-n> :NERDTreeToggle<CR>
 
 "Create a line above the cursor from normal mode
-nnoremap <S-Enter> O<Esc>
-"Create a line below the cursor from normal mode
-nnoremap <CR> o<Esc>
+nnoremap <CR> O<Esc>
 "Split a line
 nnoremap K i<Enter><Esc>
 "Remap the arrow keys to change split windows
