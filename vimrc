@@ -56,11 +56,6 @@ nnoremap <down> <C-w>j
 nnoremap <left> <C-w>h
 nnoremap <right> <C-w>l
 
-nnoremap <C-k> {
-vnoremap <C-k> {
-nnoremap <C-j> }
-vnoremap <C-j> }
-
 "Remap ctrl-c to esc
 inoremap <C-c> <Esc>
 vnoremap <Esc> <C-c>
