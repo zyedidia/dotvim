@@ -25,10 +25,6 @@
 [submodule "bundle/vim-arduino-ino"]
 	path = bundle/vim-arduino-ino
 	url = https://github.com/jplaut/vim-arduino-ino.git
-[submodule "bundle/Conque-Shell"]
-	path = bundle/Conque-Shell
-	url = https://github.com/oplatek/Conque-Shell
-	ignore = dirty
 [submodule "bundle/elm.vim"]
 	path = bundle/elm.vim
 	url = https://github.com/lambdatoast/elm.vim.git
@@ -59,10 +55,6 @@
 [submodule "bundle/ultisnips"]
 	path = bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips
-[submodule "bundle/vim-javascript"]
-	path = bundle/vim-javascript
-	url = https://github.com/pangloss/vim-javascript
-	ignore = dirty
 [submodule "bundle/html"]
 	path = bundle/html
 	url = https://github.com/othree/html5.vim
