@@ -16,7 +16,6 @@ set showcmd           "Show the current command in the bottom right
 set autoindent        "Use autoindentation
 set splitbelow        "Make horizontal splits below instead of above
 set splitright        "Make vertical splits on the right
-set ttyfast           "We are using a fast terminal
 set scrolloff=3       "Start scrolling when the cursor is 3 lines away from the bottom of the window
 set wrap              "Wrap long lines
 set laststatus=2      "Always display the status line
@@ -50,11 +49,6 @@ map <C-n> :NERDTreeToggle<CR>
 nnoremap <CR> O<Esc>
 "Split a line
 nnoremap K i<Enter><Esc>
-"Remap the arrow keys to change split windows
-nnoremap <up> <C-w>k
-nnoremap <down> <C-w>j
-nnoremap <left> <C-w>h
-nnoremap <right> <C-w>l
 
 "Remap ctrl-c to esc
 inoremap <C-c> <Esc>
@@ -95,7 +89,6 @@ autocmd FileType julia set commentstring=#%s
 "Plugin customizations
 set backspace=2
 let delimitMate_expand_cr = 1 "Expand 1 line down on enter pressed
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 
 "Remap some ultisnips triggers
 let g:UltiSnipsExpandTrigger="<c-j>"
@@ -103,9 +96,6 @@ let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 let loaded_matchparen = 1
-let g:ConqueTerm_CWInsert = 1
-let g:ConqueTerm_InsertOnEnter = 1
-let g:ConqueTerm_Color = 1
 
 map <Leader>n :NERDTreeToggle<CR>
 
@@ -115,6 +105,8 @@ let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<C-c>'
 
+let g:move_key_modifier = 'S'
+
 "User defined commands
 command! SynCheck :call SynCheck() "Check for and report syntax errors
 command! -nargs=1 -complete=buffer Tab :tab sbuf <args>
@@ -122,6 +114,7 @@ command! -nargs=1 -complete=buffer Tab :tab sbuf <args>
 "---------------------------------------
 "|          Helper functions           |
 "---------------------------------------
+
 "Put the cursor in the correct position when insert mode is activated
 function! IndentWithI()
 	if len(Trim(getline('.'))) == 0
@@ -152,7 +145,7 @@ endfunction
 "Check the file for syntax errors
 function! SynCheck()
 	execute "w"
-	execute "SyntasticCheck"
+	execute "Neomake"
 endfunction
 
 "Execute the last recorded macro (useful for using visual mode to execute

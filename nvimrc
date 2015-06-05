@@ -46,11 +46,6 @@ map <C-n> :NERDTreeToggle<CR>
 nnoremap <CR> O<Esc>
 "Split a line
 nnoremap K i<Enter><Esc>
-"Remap the arrow keys to change split windows
-nnoremap <up> <C-w>k
-nnoremap <down> <C-w>j
-nnoremap <left> <C-w>h
-nnoremap <right> <C-w>l
 
 "Remap ctrl-c to esc
 inoremap <C-c> <Esc>
@@ -91,11 +86,11 @@ autocmd BufEnter,BufRead *.lang set syn=java
 autocmd BufEnter,BufRead *.elm set syn=haskell
 autocmd FileType julia set commentstring=#%s
 autocmd BufEnter,BufRead term://* call EnterTerminal()
+autocmd! BufWritePost * Neomake
 
 "Plugin customizations
 set backspace=2
 let delimitMate_expand_cr = 1 "Expand 1 line down on enter pressed
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 
 "Remap some ultisnips triggers
 let g:UltiSnipsExpandTrigger="<c-j>"
@@ -112,6 +107,8 @@ let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<C-c>'
 
+let g:move_key_modifier = 'S'
+
 "User defined commands
 command! SynCheck :call SynCheck() "Check for and report syntax errors
 command! -nargs=1 -complete=buffer Tab :tab sbuf <args>
@@ -119,6 +116,7 @@ command! -nargs=1 -complete=buffer Tab :tab sbuf <args>
 "---------------------------------------
 "|          Helper functions           |
 "---------------------------------------
+
 "Put the cursor in the correct position when insert mode is activated
 function! IndentWithI()
 	if len(Trim(getline('.'))) == 0
@@ -154,7 +152,7 @@ endfunction
 "Check the file for syntax errors
 function! SynCheck()
 	execute "w"
-	execute "SyntasticCheck"
+	execute "Neomake"
 endfunction
 
 "Execute the last recorded macro (useful for using visual mode to execute
