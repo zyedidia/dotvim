@@ -11,4 +11,3 @@ function! CRun(...)
 endfunction
 
 command! -nargs=* Run :call CRun(<f-args>)
-

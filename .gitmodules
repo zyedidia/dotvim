@@ -52,9 +52,6 @@
 [submodule "bundle/ultisnips"]
 	path = bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips
-[submodule "bundle/html"]
-	path = bundle/html
-	url = https://github.com/othree/html5.vim
 [submodule "bundle/vim-pasta"]
 	path = bundle/vim-pasta
 	url = https://github.com/sickill/vim-pasta
@@ -70,3 +67,6 @@
 [submodule "bundle/ctrlp"]
 	path = bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim
+[submodule "bundle/html"]
+	path = bundle/html
+	url = https://github.com/othree/html5.vim

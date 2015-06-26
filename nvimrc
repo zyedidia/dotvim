@@ -22,6 +22,7 @@ set laststatus=2      "Always display the status line
 set cursorline        "Highlight the current line
 set autoread          "Automatically reload the file when it is changed from an outside program
 set swb=usetab
+set tw=0
 
 filetype indent on    "Use filetype indentation
 filetype plugin indent on "Allow plugins to use filetype indentation
@@ -82,11 +83,16 @@ nnoremap <Leader>w :w<CR>
 nnoremap <Leader>r :Run<CR>
 nnoremap <Leader>s :SynCheck<CR>
 
+nnoremap <M-[> :lpr<CR>
+nnoremap <M-]> :lne<CR>
+
 autocmd BufEnter,BufRead *.lang set syn=java
 autocmd BufEnter,BufRead *.elm set syn=haskell
 autocmd FileType julia set commentstring=#%s
 autocmd BufEnter,BufRead term://* call EnterTerminal()
 autocmd! BufWritePost * Neomake
+" autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#592929
+" autocmd BufEnter * match OverLength /\%80v.*/
 
 "Plugin customizations
 set backspace=2
@@ -107,7 +113,9 @@ let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<C-c>'
 
-let g:move_key_modifier = 'S'
+let g:move_key_modifier = 'M'
+
+let g:ctrlp_show_hidden = 1
 
 "User defined commands
 command! SynCheck :call SynCheck() "Check for and report syntax errors
