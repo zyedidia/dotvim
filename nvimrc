@@ -43,8 +43,7 @@ set undoreload=10000
 "Mappings
 map <C-n> :NERDTreeToggle<CR>
 
-"Create a line above the cursor from normal mode
-nnoremap <CR> O<Esc>
+nnoremap <CR> <C-]>
 "Split a line
 nnoremap K i<Enter><Esc>
 
@@ -120,6 +119,9 @@ let g:ctrlp_show_hidden = 1
 "User defined commands
 command! SynCheck :call SynCheck() "Check for and report syntax errors
 command! -nargs=1 -complete=buffer Tab :tab sbuf <args>
+
+command! Vterm :vsp term://bash
+command! Hterm :sp term://bash
 
 "---------------------------------------
 "|          Helper functions           |
