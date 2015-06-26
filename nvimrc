@@ -43,7 +43,8 @@ set undoreload=10000
 "Mappings
 map <C-n> :NERDTreeToggle<CR>
 
-nnoremap <CR> <C-]>
+"Open the error that the cursor is on in the location list
+nnoremap <CR> :execute "ll ".line('.')<CR>
 "Split a line
 nnoremap K i<Enter><Esc>
 
