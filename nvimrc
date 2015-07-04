@@ -21,6 +21,7 @@ set wrap              "Wrap long lines
 set laststatus=2      "Always display the status line
 set cursorline        "Highlight the current line
 set autoread          "Automatically reload the file when it is changed from an outside program
+set nohlsearch        "Don't highlight search results
 set swb=usetab
 set tw=0
 
@@ -50,7 +51,6 @@ nnoremap K i<Enter><Esc>
 
 "Remap ctrl-c to esc
 inoremap <C-c> <Esc>
-vnoremap <Esc> <C-c>
 nnoremap <C-c> <Esc>
 nnoremap r<C-c> r<Esc>
 nnoremap <C-w><C-c> <C-w><Esc>
@@ -75,9 +75,9 @@ nnoremap <Leader>= :call IndentFile()<CR>
 "Open all files in the dir in new tabs
 " nnoremap <Leader>t :call OpenAll('*')<CR>
 "Open vimrc file
-nnoremap <Leader>v :vsp ~/.vim/vimrc<CR>
+nnoremap <Leader>v :vsp ~/.nvim/nvimrc<CR>
 "Source vimrc file
-nnoremap <Leader>sv :source ~/.vim/vimrc<CR>
+nnoremap <Leader>sv :source ~/.nvim/nvimrc<CR>
 
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>r :Run<CR>
@@ -116,6 +116,8 @@ let g:multi_cursor_quit_key='<C-c>'
 let g:move_key_modifier = 'M'
 
 let g:ctrlp_show_hidden = 1
+
+let g:xmledit_enable_html = 1
 
 "User defined commands
 command! SynCheck :call SynCheck() "Check for and report syntax errors
