@@ -82,6 +82,7 @@ nnoremap <Leader>sv :source ~/.nvim/nvimrc<CR>
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>r :Run<CR>
 nnoremap <Leader>s :SynCheck<CR>
+nnoremap <Leader>l :call Lit()<CR>
 
 nnoremap <M-[> :lpr<CR>
 nnoremap <M-]> :lne<CR>
