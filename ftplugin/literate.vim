@@ -1,8 +1,6 @@
 function! Lit()
 	exec "w"
-	set shellcmdflag=-ic
 	exec "silent !lit %"
-	set shellcmdflag=-c
 endfunc
 
 function! LitCode()
