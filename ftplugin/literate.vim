@@ -24,7 +24,7 @@ endfunc
 
 function! LitPDF()
 	call Lit()
-	exec "silent !wkhtmltopdf %:r.html %:r.pdf"
+	exec "silent !wkhtmltopdf --page-size Letter -R 0 -L 0 %:r.html %:r.pdf"
 	exec "silent !open %:r.pdf"
 	exec "redraw!"
 endfunc
