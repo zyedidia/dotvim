@@ -3,32 +3,36 @@ function! Lit()
 	set shellcmdflag=-ic
 	exec "silent !lit %"
 	set shellcmdflag=-c
+endfunc
+
+function! LitCode()
+	call Lit()
 	exec "vsp %:r.".b:codetype_ext
 	exec "norm! G=gg"
 	exec "w"
 endfunc
 
-function! LitHTML()
-	exec "w"
-	set shellcmdflag=-ic
-	exec "silent !lit %"
-	set shellcmdflag=-c
+function! LitHTML_reload()
+	call Lit()
+	exec "silent !osascript ~/.nvim/ftplugin/refresh.scpt"
+	exec "redraw!"
+endfunc
+
+function! LitHTML_open()
+	call Lit()
 	exec "silent !open %:r.html"
 	exec "redraw!"
 endfunc
 
 function! LitPDF()
-	exec "w"
-	set shellcmdflag=-ic
-	exec "silent !lit %"
-	set shellcmdflag=-c
+	call Lit()
 	exec "silent !wkhtmltopdf %:r.html %:r.pdf"
 	exec "silent !open %:r.pdf"
 	exec "redraw!"
 endfunc
 
 function! Exe(...)
-	call Lit()
+	call LitCode()
 
 	if (a:0 > 0)
 		let args=join(a:000, ' ')
@@ -44,3 +48,6 @@ command! -nargs=* Exe :call Exe(<f-args>)
 
 nnoremap <Leader>e :Exe<CR>
 nnoremap <Leader>p :call LitPDF()<CR>
+nnoremap <Leader>l :call LitCode()<CR>
+nnoremap <Leader>h :call LitHTML_reload()<CR>
+nnoremap <Leader>o :call LitHTML_open()<CR>
