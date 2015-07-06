@@ -70,12 +70,12 @@
 [submodule "bundle/html"]
 	path = bundle/html
 	url = https://github.com/othree/html5.vim
-[submodule "bundle/julialint.vim"]
-	path = bundle/julialint.vim
-	url = https://github.com/zyedidia/julialint.vim
 [submodule "bundle/xmledit"]
 	path = bundle/xmledit
 	url = https://github.com/sukima/xmledit.git
 [submodule "bundle/literate.vim"]
 	path = bundle/literate.vim
 	url = https://github.com/zyedidia/literate.vim
+[submodule "bundle/julialint.vim"]
+	path = bundle/julialint.vim
+	url = https://github.com/zyedidia/julialint.vim
