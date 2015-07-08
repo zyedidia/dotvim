@@ -49,9 +49,6 @@
 	path = bundle/textobj-entire
 	url = https://github.com/kana/vim-textobj-entire
 	ignore = dirty
-[submodule "bundle/ultisnips"]
-	path = bundle/ultisnips
-	url = https://github.com/SirVer/ultisnips
 [submodule "bundle/vim-pasta"]
 	path = bundle/vim-pasta
 	url = https://github.com/sickill/vim-pasta
@@ -79,3 +76,6 @@
 [submodule "bundle/julialint.vim"]
 	path = bundle/julialint.vim
 	url = https://github.com/zyedidia/julialint.vim
+[submodule "bundle/airline"]
+	path = bundle/airline
+	url = https://github.com/bling/vim-airline

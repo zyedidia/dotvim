@@ -22,6 +22,7 @@ set laststatus=2      "Always display the status line
 set cursorline        "Highlight the current line
 set autoread          "Automatically reload the file when it is changed from an outside program
 set swb=usetab
+set expandtab
 
 filetype indent on    "Use filetype indentation
 filetype plugin indent on "Allow plugins to use filetype indentation

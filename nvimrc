@@ -22,8 +22,10 @@ set laststatus=2      "Always display the status line
 set cursorline        "Highlight the current line
 set autoread          "Automatically reload the file when it is changed from an outside program
 set nohlsearch        "Don't highlight search results
+set expandtab         "Use spaces instead of tabs
 set swb=usetab
 set tw=0
+set omnifunc=syntaxcomplete#Complete
 
 filetype indent on    "Use filetype indentation
 filetype plugin indent on "Allow plugins to use filetype indentation
@@ -113,6 +115,24 @@ let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<C-c>'
 
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+
 let g:move_key_modifier = 'M'
 
 let g:ctrlp_show_hidden = 1
@@ -135,7 +155,7 @@ function! IndentWithI()
 	if len(Trim(getline('.'))) == 0
 		"cc will correctly indent the cursor and switch to insert mode
 		return "cc"
-	else 
+	else
 		return "i"
 	endif
 endfunction
@@ -151,14 +171,14 @@ function EnterTerminal()
 endfunction
 
 "Autoindent the file without moving the cursor
-function! IndentFile() 
+function! IndentFile()
 	execute "normal! mqHmwgg=G`wzt`q"
 endfunction
 
 "Open all the files in the current file's directory
 function! OpenAll(ext)
 	execute "lcd %:p:h"
-	execute "args *." . a:ext 
+	execute "args *." . a:ext
 	execute "tab all"
 endfunction
 
