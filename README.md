@@ -4,8 +4,9 @@ This is my Vim configuration
 To install it execute the following commands
 
 ```
-cd ~
-git clone https://github.com/zyedidia/dotvim.git ~/.vim
+$ cd ~
+$ git clone https://github.com/zyedidia/dotvim.git ~/.vim
+$ git submodule update --init
 ```
 
 Then run `:PluginInstall` from inside vim.
