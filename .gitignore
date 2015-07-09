@@ -4,4 +4,5 @@ undo/*
 # Ignore swap files
 *.swp
 
-bundle
+bundle/*
+!bundle/Vundle.vim
