@@ -8,7 +8,7 @@ call vundle#begin('~/.nvim/bundle')
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'zyedidia/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ervandew/supertab'
 Plugin 'terryma/vim-multiple-cursors'
