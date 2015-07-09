@@ -1,5 +1,6 @@
 " Welcome to my vimrc
-execute pathogen#infect()
+
+source ~/.nvim/plugins.vim
 
 set showmatch         "Show matching braces
 set mat=1             "Set the time to show matching braces to 1 second
@@ -23,15 +24,11 @@ set cursorline        "Highlight the current line
 set autoread          "Automatically reload the file when it is changed from an outside program
 set nohlsearch        "Don't highlight search results
 set expandtab         "Use spaces instead of tabs
-set swb=usetab
-set tw=0
-set omnifunc=syntaxcomplete#Complete
 
 filetype indent on    "Use filetype indentation
 filetype plugin indent on "Allow plugins to use filetype indentation
 syntax on             "Turn on syntax highlighting
 
-set t_Co=256
 set background=dark  "Use a dark background
 colorscheme solarized "Use the solarized colorscheme
 
@@ -81,12 +78,13 @@ nnoremap <Leader>v :vsp ~/.nvim/nvimrc<CR>
 "Source vimrc file
 nnoremap <Leader>sv :source ~/.nvim/nvimrc<CR>
 
-nnoremap <Leader>w :w<CR>
 nnoremap <Leader>r :Run<CR>
 nnoremap <Leader>s :SynCheck<CR>
 
+"Location list pre
 nnoremap <M-[> :lpr<CR>
-nnoremap <M-]> :lne<CR>
+"Location list next
+nnoremap <M-]> :lne<CR> 
 
 autocmd BufEnter,BufRead *.lang set syn=java
 autocmd BufEnter,BufRead *.elm set syn=haskell
@@ -96,18 +94,13 @@ autocmd! BufWritePost * Neomake
 " autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#592929
 " autocmd BufEnter * match OverLength /\%80v.*/
 
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1 "Use a bar in insert mode and a block in normal mode
 
 "Plugin customizations
 set backspace=2
 let delimitMate_expand_cr = 1 "Expand 1 line down on enter pressed
 
-"Remap some ultisnips triggers
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-
-let loaded_matchparen = 1
+let loaded_matchparen = 1 "Don't open match paren
 
 map <Leader>n :NERDTreeToggle<CR>
 
@@ -117,18 +110,15 @@ let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<C-c>'
 
-let g:move_key_modifier = 'M'
+let g:move_key_modifier = 'M' "Use alt hjkl to move blocks around
 
-let g:ctrlp_show_hidden = 1
-
-let g:xmledit_enable_html = 1
+let g:ctrlp_show_hidden = 1 "Show hidden files when searching with ctrlp
 
 "User defined commands
 command! SynCheck :call SynCheck() "Check for and report syntax errors
-command! -nargs=1 -complete=buffer Tab :tab sbuf <args>
 
-command! Vterm :vsp term://bash
-command! Hterm :sp term://bash
+command! Vterm :vsp term://bash "Open a terminal in a vertical split
+command! Hterm :sp term://bash "Open a terminal in a horizontal split
 
 "---------------------------------------
 "|          Helper functions           |
@@ -149,6 +139,7 @@ function! Trim(input_string)
     return substitute(a:input_string, '^\s*\(.\{-}\)\s*$', '\1', '')
 endfunction
 
+"Put the cursor in the right place when it enters a terminal buffer
 function EnterTerminal()
     exec "norm! gg"
     exec "startinsert"
@@ -173,7 +164,7 @@ function! SynCheck()
 endfunction
 
 "Execute the last recorded macro (useful for using visual mode to execute
-"macros
+"macros)
 function! ExecMacro()
     execute "normal @q"
 endfunction

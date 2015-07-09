@@ -1,6 +1,8 @@
 " Welcome to my vimrc
 execute pathogen#infect()
 
+source ~/.vim/plugins.vim
+
 set showmatch         "Show matching braces
 set mat=1             "Set the time to show matching braces to 1 second
 set ignorecase        "Ignore case on searches
