@@ -76,3 +76,6 @@
 [submodule "bundle/julialint.vim"]
 	path = bundle/julialint.vim
 	url = https://github.com/zyedidia/julialint.vim
+[submodule "bundle/diminactive"]
+	path = bundle/diminactive
+	url = https://github.com/blueyed/vim-diminactive
