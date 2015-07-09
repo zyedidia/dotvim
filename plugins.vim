@@ -1,31 +1,22 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+call plug#begin('~/.nvim/bundle')
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.nvim/bundle/Vundle.vim
-call vundle#begin('~/.nvim/bundle')
+Plug 'zyedidia/vim-colors-solarized'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'ervandew/supertab'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'JuliaLang/julia-vim'
+Plug 'Raimondi/delimitMate'
+Plug 'tpope/vim-commentary'
+Plug 'kana/vim-textobj-entire'
+Plug 'kana/vim-textobj-user'
+Plug 'sickill/vim-pasta'
+Plug 'zyedidia/vim-snake', { 'on': 'Snake' }
+Plug 'benekastah/neomake'
+Plug 'matze/vim-move'
+Plug 'kien/ctrlp.vim'
+Plug 'zyedidia/literate.vim', { 'for': 'literate' }
+Plug 'zyedidia/julialint.vim', { 'for': 'julia' }
+Plug 'blueyed/vim-diminactive'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-
-Plugin 'zyedidia/vim-colors-solarized'
-Plugin 'scrooloose/nerdtree'
-Plugin 'ervandew/supertab'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'JuliaLang/julia-vim'
-Plugin 'Raimondi/delimitMate'
-Plugin 'tpope/vim-commentary'
-Plugin 'kana/vim-textobj-entire'
-Plugin 'kana/vim-textobj-user'
-Plugin 'sickill/vim-pasta'
-Plugin 'zyedidia/vim-snake'
-Plugin 'benekastah/neomake'
-Plugin 'matze/vim-move'
-Plugin 'kien/ctrlp.vim'
-Plugin 'zyedidia/literate.vim'
-Plugin 'zyedidia/julialint.vim'
-Plugin 'blueyed/vim-diminactive'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+call plug#end()

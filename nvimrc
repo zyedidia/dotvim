@@ -114,6 +114,12 @@ let g:move_key_modifier = 'M' "Use alt hjkl to move blocks around
 
 let g:ctrlp_show_hidden = 1 "Show hidden files when searching with ctrlp
 
+let g:ycm_filetype_blacklist = {
+      \ 'literate' : 1,
+      \ 'markdown' : 1,
+      \ 'text' : 1,
+      \}
+
 "User defined commands
 command! SynCheck :call SynCheck() "Check for and report syntax errors
 
