@@ -37,7 +37,7 @@ colorscheme solarized "Use the solarized colorscheme
 
 "Make an undo directory if it does not exist
 if !isdirectory($HOME . "/.vim/undo")
-	call mkdir($HOME . "/.vim/undo", "p")
+    call mkdir($HOME . "/.vim/undo", "p")
 endif
 set undodir=~/.vim/undo "Set the undo directory
 set undofile "Turn on persistent undo
@@ -96,6 +96,8 @@ autocmd! BufWritePost * Neomake
 " autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#592929
 " autocmd BufEnter * match OverLength /\%80v.*/
 
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+
 "Plugin customizations
 set backspace=2
 let delimitMate_expand_cr = 1 "Expand 1 line down on enter pressed
@@ -134,51 +136,51 @@ command! Hterm :sp term://bash
 
 "Put the cursor in the correct position when insert mode is activated
 function! IndentWithI()
-	if len(Trim(getline('.'))) == 0
-		"cc will correctly indent the cursor and switch to insert mode
-		return "cc"
-	else
-		return "i"
-	endif
+    if len(Trim(getline('.'))) == 0
+        "cc will correctly indent the cursor and switch to insert mode
+        return "cc"
+    else
+        return "i"
+    endif
 endfunction
 
 "Trim a string
 function! Trim(input_string)
-	return substitute(a:input_string, '^\s*\(.\{-}\)\s*$', '\1', '')
+    return substitute(a:input_string, '^\s*\(.\{-}\)\s*$', '\1', '')
 endfunction
 
 function EnterTerminal()
-	exec "norm! gg"
-	exec "startinsert"
+    exec "norm! gg"
+    exec "startinsert"
 endfunction
 
 "Autoindent the file without moving the cursor
 function! IndentFile()
-	execute "normal! mqHmwgg=G`wzt`q"
+    execute "normal! mqHmwgg=G`wzt`q"
 endfunction
 
 "Open all the files in the current file's directory
 function! OpenAll(ext)
-	execute "lcd %:p:h"
-	execute "args *." . a:ext
-	execute "tab all"
+    execute "lcd %:p:h"
+    execute "args *." . a:ext
+    execute "tab all"
 endfunction
 
 "Check the file for syntax errors
 function! SynCheck()
-	execute "w"
-	execute "Neomake"
+    execute "w"
+    execute "Neomake"
 endfunction
 
 "Execute the last recorded macro (useful for using visual mode to execute
 "macros
 function! ExecMacro()
-	execute "normal @q"
+    execute "normal @q"
 endfunction
 
 "Open the current setup in MacVim
 function! OpenInMacVim()
-	execute "mksession! ~/.session.vim"
-	execute "silent !mvim -S ~/.session.vim"
-	execute "wqa"
+    execute "mksession! ~/.session.vim"
+    execute "silent !mvim -S ~/.session.vim"
+    execute "wqa"
 endfunction
