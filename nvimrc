@@ -24,7 +24,6 @@ set cursorline        "Highlight the current line
 set autoread          "Automatically reload the file when it is changed from an outside program
 set nohlsearch        "Don't highlight search results
 set expandtab         "Use spaces instead of tabs
-let g:neocomplcache_enable_at_startup = 1
 
 filetype indent on    "Use filetype indentation
 filetype plugin indent on "Allow plugins to use filetype indentation
@@ -34,8 +33,8 @@ set background=dark  "Use a dark background
 colorscheme solarized "Use the solarized colorscheme
 
 "Make an undo directory if it does not exist
-if !isdirectory($HOME . "/.vim/undo")
-    call mkdir($HOME . "/.vim/undo", "p")
+if !isdirectory($HOME . "/.nvim/undo")
+    call mkdir($HOME . "/.nvim/undo", "p")
 endif
 set undodir=~/.vim/undo "Set the undo directory
 set undofile "Turn on persistent undo

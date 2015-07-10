@@ -1,7 +1,7 @@
 call plug#begin('~/.nvim/bundle')
 
 Plug 'zyedidia/vim-colors-solarized'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree'
 Plug 'ervandew/supertab'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'JuliaLang/julia-vim'
@@ -15,7 +15,7 @@ Plug 'benekastah/neomake'
 Plug 'matze/vim-move'
 Plug 'kien/ctrlp.vim'
 Plug 'zyedidia/literate.vim', { 'for': 'literate' }
-Plug 'zyedidia/julialint.vim', { 'for': 'julia' }
+Plug 'zyedidia/julialint.vim'
 Plug 'blueyed/vim-diminactive'
 " Plug 'Valloric/YouCompleteMe', { 'for': 'python', 'do': './install.sh' }
 
