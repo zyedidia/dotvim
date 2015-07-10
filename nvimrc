@@ -24,7 +24,6 @@ set cursorline        "Highlight the current line
 set autoread          "Automatically reload the file when it is changed from an outside program
 set nohlsearch        "Don't highlight search results
 set expandtab         "Use spaces instead of tabs
-set omnifunc=syntaxcomplete#Complete "Enable omnicompletion
 let g:neocomplcache_enable_at_startup = 1
 
 filetype indent on    "Use filetype indentation
