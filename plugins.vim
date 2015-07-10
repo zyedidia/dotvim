@@ -2,7 +2,7 @@ call plug#begin('~/.nvim/bundle')
 
 Plug 'zyedidia/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
-" Plug 'ervandew/supertab'
+Plug 'ervandew/supertab'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'JuliaLang/julia-vim'
 Plug 'Raimondi/delimitMate'
@@ -19,6 +19,6 @@ Plug 'zyedidia/julialint.vim'
 Plug 'blueyed/vim-diminactive'
 " Plug 'Valloric/YouCompleteMe', { 'for': 'python', 'do': './install.sh' }
 
-Plug 'https://github.com/Shougo/neocomplcache.vim'
+" Plug 'https://github.com/Shougo/neocomplcache.vim'
 
 call plug#end()
