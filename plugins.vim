@@ -17,6 +17,9 @@ Plug 'kien/ctrlp.vim'
 Plug 'zyedidia/literate.vim', { 'for': 'literate' }
 Plug 'zyedidia/julialint.vim', { 'for': 'julia' }
 Plug 'blueyed/vim-diminactive'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
+Plug 'Valloric/YouCompleteMe', { 'for': 'python', 'do': './install.sh' }
+" Plug 'https://github.com/marijnh/tern_for_vim.git', { 'do': 'npm install' }
+
+Plug 'https://github.com/Shougo/neocomplcache.vim'
 
 call plug#end()

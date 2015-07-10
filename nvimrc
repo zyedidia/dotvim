@@ -24,6 +24,8 @@ set cursorline        "Highlight the current line
 set autoread          "Automatically reload the file when it is changed from an outside program
 set nohlsearch        "Don't highlight search results
 set expandtab         "Use spaces instead of tabs
+set omnifunc=syntaxcomplete#Complete "Enable omnicompletion
+let g:neocomplcache_enable_at_startup = 1
 
 filetype indent on    "Use filetype indentation
 filetype plugin indent on "Allow plugins to use filetype indentation
@@ -62,7 +64,7 @@ nnoremap 0 ^
 nnoremap ^ 0
 tnoremap <C-w> <C-\><C-n><C-w>
 tnoremap <Esc> <C-\><C-n>
-nnoremap <C-i> ggi
+" nnoremap <C-i> ggi
 
 "Remap j and k to operate on visual lines
 nnoremap j gj
@@ -114,11 +116,11 @@ let g:move_key_modifier = 'M' "Use alt hjkl to move blocks around
 
 let g:ctrlp_show_hidden = 1 "Show hidden files when searching with ctrlp
 
-let g:ycm_filetype_blacklist = {
-      \ 'literate' : 1,
-      \ 'markdown' : 1,
-      \ 'text' : 1,
-      \}
+" let g:ycm_filetype_blacklist = {
+"       \ 'literate' : 1,
+"       \ 'markdown' : 1,
+"       \ 'text' : 1,
+"       \}
 
 "User defined commands
 command! SynCheck :call SynCheck() "Check for and report syntax errors

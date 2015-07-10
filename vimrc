@@ -1,5 +1,4 @@
 " Welcome to my vimrc
-execute pathogen#infect()
 
 source ~/.vim/plugins.vim
 
@@ -25,6 +24,8 @@ set cursorline        "Highlight the current line
 set autoread          "Automatically reload the file when it is changed from an outside program
 set swb=usetab
 set expandtab
+set omnifunc=syntaxcomplete#Complete "Enable omnicompletion
+let g:neocomplcache_enable_at_startup = 1
 
 filetype indent on    "Use filetype indentation
 filetype plugin indent on "Allow plugins to use filetype indentation
@@ -85,9 +86,15 @@ nnoremap <Leader>w :w<CR>
 nnoremap <Leader>r :Run<CR>
 nnoremap <Leader>s :SynCheck<CR>
 
+"Location list pre
+nnoremap <M-[> :lpr<CR>
+"Location list next
+nnoremap <M-]> :lne<CR> 
+
 autocmd BufEnter,BufRead *.lang set syn=java
 autocmd BufEnter,BufRead *.elm set syn=haskell
 autocmd FileType julia set commentstring=#%s
+autocmd! BufWritePost * Neomake
 
 "Plugin customizations
 set backspace=2
@@ -108,11 +115,18 @@ let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<C-c>'
 
-let g:move_key_modifier = 'S'
+let g:move_key_modifier = 'M'
+
+let g:ctrlp_show_hidden = 1 "Show hidden files when searching with ctrlp
+
+" let g:ycm_filetype_blacklist = {
+"       \ 'literate' : 1,
+"       \ 'markdown' : 1,
+"       \ 'text' : 1,
+"       \}
 
 "User defined commands
 command! SynCheck :call SynCheck() "Check for and report syntax errors
-command! -nargs=1 -complete=buffer Tab :tab sbuf <args>
 
 "---------------------------------------
 "|          Helper functions           |
