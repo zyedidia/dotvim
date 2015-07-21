@@ -1,5 +1,9 @@
 " Welcome to my vimrc
 
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_disable_auto_complete = 1
+inoremap <expr><Tab> pumvisible() ? "\<C-n>" : neocomplcache#start_manual_complete()
+
 source ~/.nvim/plugins.vim
 
 set showmatch         "Show matching braces
@@ -24,6 +28,7 @@ set cursorline        "Highlight the current line
 set autoread          "Automatically reload the file when it is changed from an outside program
 set nohlsearch        "Don't highlight search results
 set expandtab         "Use spaces instead of tabs
+set omnifunc=syntaxcomplete#Complete
 
 filetype indent on    "Use filetype indentation
 filetype plugin indent on "Allow plugins to use filetype indentation
