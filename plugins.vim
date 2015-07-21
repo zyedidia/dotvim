@@ -16,6 +16,9 @@ Plug 'matze/vim-move'
 Plug 'kien/ctrlp.vim'
 Plug 'zyedidia/literate.vim', { 'for': 'literate' }
 Plug 'zyedidia/julialint.vim'
+" Plug 'https://github.com/itchyny/lightline.vim.git'
+" Plug 'https://github.com/simnalamburt/vim-mundo.git'
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'blueyed/vim-diminactive'
 " Plug 'Valloric/YouCompleteMe', { 'for': 'python', 'do': './install.sh' }
 
