@@ -43,10 +43,10 @@ set undofile "Turn on persistent undo
 set undoreload=10000
 
 "Mappings
-map <C-n> :NERDTreeToggle<CR>
 
 "Open the error that the cursor is on in the location list
 nnoremap <CR> :execute "ll ".line('.')<CR>
+
 "Split a line
 nnoremap K i<Enter><Esc>
 
@@ -55,11 +55,15 @@ inoremap <C-c> <Esc>
 nnoremap <C-c> <Esc>
 nnoremap r<C-c> r<Esc>
 nnoremap <C-w><C-c> <C-w><Esc>
+
 "Make executing macros on selected lines easy by just pressing space
 vnoremap <Space> :call ExecMacro()<CR>
+
 "Remap ctrl-k and ctrl-j to go up and down in command-line-mode
 cnoremap <C-k> <up>
 cnoremap <C-j> <down>
+
+"Remap 0 to ^ and ^ to 0
 nnoremap 0 ^
 nnoremap ^ 0
 tnoremap <C-w> <C-\><C-n><C-w>
@@ -69,18 +73,27 @@ tnoremap <Esc> <C-\><C-n>
 "Remap j and k to operate on visual lines
 nnoremap j gj
 nnoremap k gk
+
+"Remap Control p to open fuzzy finder
+" nnoremap <C-p> :FZF<CR>
+
 "Indent the cursor correctly when going into insert mode on an empty line
 nnoremap <expr> i IndentWithI()
+
 "Correctly indent the entire file
 nnoremap <Leader>= :call IndentFile()<CR>
+
 "Open all files in the dir in new tabs
 " nnoremap <Leader>t :call OpenAll('*')<CR>
 "Open vimrc file
 nnoremap <Leader>v :vsp ~/.nvim/nvimrc<CR>
+
 "Source vimrc file
 nnoremap <Leader>sv :source ~/.nvim/nvimrc<CR>
 
+"Run the current file
 nnoremap <Leader>r :Run<CR>
+"Lint the current file (syntax check)
 nnoremap <Leader>s :SynCheck<CR>
 
 "Location list pre

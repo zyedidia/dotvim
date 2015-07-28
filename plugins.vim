@@ -40,6 +40,8 @@ Plug 'https://github.com/raymond-w-ko/vim-lua-indent', { 'for': 'lua' }
 Plug 'https://github.com/itchyny/lightline.vim.git'
 " Julialint
 Plug 'https://github.com/zyedidia/julialint.vim'
+" Mundo
+Plug 'https://github.com/simnalamburt/vim-mundo.git'
 
 " Plug 'blueyed/vim-diminactive'
 " Plug 'Valloric/YouCompleteMe', { 'for': 'python', 'do': './install.sh' }
