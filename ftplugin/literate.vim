@@ -4,9 +4,10 @@ function! Lit()
 endfunc
 
 function! LitCode()
-	call Lit()
-	exec "vsp %:r.".b:codetype_ext
-	exec "norm! G=gg"
+    exec "w"
+    exec "silent !lit -code %"
+	" exec "vsp %:r.".b:codetype_ext
+	" exec "norm! G=gg"
 	exec "w"
 endfunc
 

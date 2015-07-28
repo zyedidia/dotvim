@@ -1,9 +1,5 @@
 " Welcome to my vimrc
 
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_disable_auto_complete = 1
-inoremap <expr><Tab> pumvisible() ? "\<C-n>" : neocomplcache#start_manual_complete()
-
 source ~/.nvim/plugins.vim
 
 set showmatch         "Show matching braces
@@ -29,12 +25,13 @@ set autoread          "Automatically reload the file when it is changed from an 
 set nohlsearch        "Don't highlight search results
 set expandtab         "Use spaces instead of tabs
 set omnifunc=syntaxcomplete#Complete
+set clipboard+=unnamed
 
 filetype indent on    "Use filetype indentation
 filetype plugin indent on "Allow plugins to use filetype indentation
 syntax on             "Turn on syntax highlighting
 
-set background=dark  "Use a dark background
+set background=dark "Use a dark background
 colorscheme solarized "Use the solarized colorscheme
 
 "Make an undo directory if it does not exist
@@ -95,7 +92,7 @@ autocmd BufEnter,BufRead *.lang set syn=java
 autocmd BufEnter,BufRead *.elm set syn=haskell
 autocmd FileType julia set commentstring=#%s
 autocmd BufEnter,BufRead term://* call EnterTerminal()
-autocmd! BufWritePost * Neomake
+" autocmd! BufWritePost * Neomake
 " autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#592929
 " autocmd BufEnter * match OverLength /\%80v.*/
 
@@ -118,12 +115,27 @@ let g:multi_cursor_quit_key='<C-c>'
 let g:move_key_modifier = 'M' "Use alt hjkl to move blocks around
 
 let g:ctrlp_show_hidden = 1 "Show hidden files when searching with ctrlp
+if executable("ag")
+    let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
+          \ --ignore .git
+          \ --ignore .svn
+          \ --ignore .hg
+          \ --ignore .DS_Store
+          \ --ignore "**/*.pyc"
+          \ -g ""'
+endif
 
-" let g:ycm_filetype_blacklist = {
-"       \ 'literate' : 1,
-"       \ 'markdown' : 1,
-"       \ 'text' : 1,
-"       \}
+let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+
+let g:lightline = {
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ], ['relativepath', 'modified' ] ],
+      \ },
+      \ 'inactive': {
+      \   'left': [ [ 'relativepath', 'modified' ] ],
+      \   'right': [ [ 'lineinfo' ], [ 'percent' ] ]
+      \ }
+      \ }
 
 "User defined commands
 command! SynCheck :call SynCheck() "Check for and report syntax errors
