@@ -43,6 +43,10 @@ set undofile "Turn on persistent undo
 set undoreload=10000
 
 "Mappings
+nnoremap <up> <C-w>k
+nnoremap <down> <C-w>j
+nnoremap <left> <C-w>h
+nnoremap <right> <C-w>l
 
 "Open the error that the cursor is on in the location list
 nnoremap <CR> :execute "ll ".line('.')<CR>
