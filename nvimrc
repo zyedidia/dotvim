@@ -1,6 +1,7 @@
 " Welcome to my vimrc
 
 source ~/.nvim/plugins.vim
+" source $VIMRUNTIME/vimrc_example.vim
 
 set showmatch         "Show matching braces
 set mat=1             "Set the time to show matching braces to 1 second
@@ -41,6 +42,11 @@ endif
 set undodir=~/.vim/undo "Set the undo directory
 set undofile "Turn on persistent undo
 set undoreload=10000
+
+if !isdirectory($HOME . "/.nvim/backup")
+    call mkdir($HOME . "/.nvim/backup", "p")
+endif
+set backupdir=~/.nvim/backup
 
 "Mappings
 nnoremap <up> <C-w>k
@@ -109,7 +115,7 @@ autocmd BufEnter,BufRead *.lang set syn=java
 autocmd BufEnter,BufRead *.elm set syn=haskell
 autocmd FileType julia set commentstring=#%s
 autocmd BufEnter,BufRead term://* call EnterTerminal()
-" autocmd! BufWritePost * Neomake
+autocmd! BufWritePost * Neomake
 " autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#592929
 " autocmd BufEnter * match OverLength /\%80v.*/
 
@@ -134,25 +140,25 @@ let g:move_key_modifier = 'M' "Use alt hjkl to move blocks around
 let g:ctrlp_show_hidden = 1 "Show hidden files when searching with ctrlp
 if executable("ag")
     let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
-          \ --ignore .git
-          \ --ignore .svn
-          \ --ignore .hg
-          \ --ignore .DS_Store
-          \ --ignore "**/*.pyc"
-          \ -g ""'
+                \ --ignore .git
+                \ --ignore .svn
+                \ --ignore .hg
+                \ --ignore .DS_Store
+                \ --ignore "**/*.pyc"
+                \ -g ""'
 endif
 
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 
 let g:lightline = {
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ], ['relativepath', 'modified' ] ],
-      \ },
-      \ 'inactive': {
-      \   'left': [ [ 'relativepath', 'modified' ] ],
-      \   'right': [ [ 'lineinfo' ], [ 'percent' ] ]
-      \ }
-      \ }
+            \ 'active': {
+            \   'left': [ [ 'mode', 'paste' ], ['relativepath', 'modified' ] ],
+            \ },
+            \ 'inactive': {
+            \   'left': [ [ 'relativepath', 'modified' ] ],
+            \   'right': [ [ 'lineinfo' ], [ 'percent' ] ]
+            \ }
+            \ }
 
 "User defined commands
 command! SynCheck :call SynCheck() "Check for and report syntax errors

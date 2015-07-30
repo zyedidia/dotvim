@@ -1,7 +1,11 @@
 # Ignore the undo file
-undo/*
+undo
 
 # Ignore swap files
 *.swp
 
+# Ignore plugins
 bundle
+
+# Ignore backup files
+backup

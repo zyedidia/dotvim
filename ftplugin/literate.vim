@@ -3,23 +3,9 @@ function! Lit()
 	exec "silent !lit %"
 endfunc
 
-function! LitCode()
-    exec "w"
-    exec "silent !lit -code %"
-	" exec "vsp %:r.".b:codetype_ext
-	" exec "norm! G=gg"
-	exec "w"
-endfunc
-
 function! LitHTML_reload()
 	call Lit()
 	exec "silent !osascript ~/.nvim/ftplugin/refresh.scpt"
-	exec "redraw!"
-endfunc
-
-function! LitHTML_open()
-	call Lit()
-	exec "silent !open %:r.html"
 	exec "redraw!"
 endfunc
 
@@ -47,6 +33,4 @@ command! -nargs=* Exe :call Exe(<f-args>)
 
 nnoremap <Leader>e :Exe<CR>
 nnoremap <Leader>p :call LitPDF()<CR>
-nnoremap <Leader>l :call LitCode()<CR>
 nnoremap <Leader>h :call LitHTML_reload()<CR>
-nnoremap <Leader>o :call LitHTML_open()<CR>
