@@ -26,7 +26,6 @@ set autoread          "Automatically reload the file when it is changed from an 
 set nohlsearch        "Don't highlight search results
 set expandtab         "Use spaces instead of tabs
 set omnifunc=syntaxcomplete#Complete
-set clipboard+=unnamed
 
 filetype indent on    "Use filetype indentation
 filetype plugin indent on "Allow plugins to use filetype indentation
@@ -221,3 +220,13 @@ function! OpenInMacVim()
     execute "silent !mvim -S ~/.session.vim"
     execute "wqa"
 endfunction
+
+function! Incr()
+    let a = line('.') - line("'<")
+    let c = virtcol("'<")
+    if a > 0
+        execute 'normal! '.c.'|'.a."\<C-a>"
+    endif
+    normal `<
+endfunction
+vnoremap <C-a> :call Incr()<CR>
