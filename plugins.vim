@@ -1,4 +1,8 @@
-call plug#begin('~/.nvim/bundle')
+if has('nvim')
+    call plug#begin('~/.nvim/bundle')
+else
+    call plug#begin('~/.vim/bundle')
+endif
 
 " Solarized
 Plug 'https://github.com/zyedidia/vim-colors-solarized'
@@ -12,8 +16,7 @@ Plug 'https://github.com/terryma/vim-multiple-cursors'
 Plug 'https://github.com/JuliaLang/julia-vim'
 " DelimitMate
 Plug 'https://github.com/Raimondi/delimitMate'
-" Commentary
-" Plug 'https://github.com/tpope/vim-commentary'
+" Tcomment
 Plug 'https://github.com/tomtom/tcomment_vim.git'
 " Textobj Entire
 Plug 'https://github.com/kana/vim-textobj-entire'
@@ -43,7 +46,7 @@ Plug 'https://github.com/itchyny/lightline.vim.git'
 Plug 'https://github.com/zyedidia/julialint.vim'
 " Mundo
 Plug 'https://github.com/simnalamburt/vim-mundo.git'
-" Plug 'rking/ag.vim'
+Plug 'rking/ag.vim'
 
 " Plug 'blueyed/vim-diminactive'
 " Plug 'Valloric/YouCompleteMe', { 'for': 'python', 'do': './install.sh' }
