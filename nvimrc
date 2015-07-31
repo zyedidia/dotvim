@@ -24,12 +24,8 @@ set cursorline        "Highlight the current line
 set autoread          "Automatically reload the file when it is changed from an outside program
 set nohlsearch        "Don't highlight search results
 set expandtab         "Use spaces instead of tabs
-<<<<<<< HEAD
-set omnifunc=syntaxcomplete#Complete
-=======
 set omnifunc=syntaxcomplete#Complete "Enable omnicompletion
 set clipboard+=unnamed
->>>>>>> b3c1320a7986d6498b86990773ef5f2268dca718
 
 filetype indent on    "Use filetype indentation
 filetype plugin indent on "Allow plugins to use filetype indentation
