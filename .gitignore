@@ -9,3 +9,6 @@ bundle
 
 # Ignore backup files
 backup
+
+# Personal config
+personal_config.vim

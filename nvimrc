@@ -1,7 +1,6 @@
 " Welcome to my vimrc
 
 source ~/.nvim/plugins.vim
-" source $VIMRUNTIME/vimrc_example.vim
 
 set showmatch         "Show matching braces
 set mat=1             "Set the time to show matching braces to 1 second
@@ -25,7 +24,7 @@ set cursorline        "Highlight the current line
 set autoread          "Automatically reload the file when it is changed from an outside program
 set nohlsearch        "Don't highlight search results
 set expandtab         "Use spaces instead of tabs
-set omnifunc=syntaxcomplete#Complete
+set omnifunc=syntaxcomplete#Complete "Enable omnicompletion
 set clipboard+=unnamed
 
 filetype indent on    "Use filetype indentation
@@ -43,6 +42,7 @@ set undodir=~/.vim/undo "Set the undo directory
 set undofile "Turn on persistent undo
 set undoreload=10000
 
+set backup
 if !isdirectory($HOME . "/.nvim/backup")
     call mkdir($HOME . "/.nvim/backup", "p")
 endif
@@ -221,3 +221,8 @@ function! OpenInMacVim()
     execute "silent !mvim -S ~/.session.vim"
     execute "wqa"
 endfunction
+
+" Read any personal configuration
+if filereadable($HOME . "/.nvim/personal_config.vim")
+    source ~/.nvim/personal_config.vim
+endif
