@@ -47,6 +47,7 @@ Plug 'https://github.com/zyedidia/julialint.vim'
 " Mundo
 Plug 'https://github.com/simnalamburt/vim-mundo.git'
 Plug 'rking/ag.vim'
+Plug 'https://github.com/jrozner/vim-antlr'
 
 " Plug 'blueyed/vim-diminactive'
 " Plug 'Valloric/YouCompleteMe', { 'for': 'python', 'do': './install.sh' }
