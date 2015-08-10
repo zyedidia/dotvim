@@ -2,6 +2,14 @@ if has('nvim')
     call plug#begin('~/.nvim/bundle')
 else
     call plug#begin('~/.vim/bundle')
+
+    if exists("g:csharp")
+        Plug 'https://github.com/tpope/vim-dispatch.git'
+        Plug 'https://github.com/Shougo/neocomplete.vim.git'
+        Plug 'https://github.com/OmniSharp/omnisharp-vim', { 'do': 'cd server && xbuild' }
+
+        source ~/.vim/csharp_config.vim
+    endif
 endif
 
 " Solarized
