@@ -5,8 +5,8 @@ else
 
     if exists("g:csharp")
         Plug 'https://github.com/tpope/vim-dispatch.git'
-        Plug 'https://github.com/Shougo/neocomplete.vim.git'
         Plug 'https://github.com/OmniSharp/omnisharp-vim', { 'do': 'cd server && xbuild' }
+        Plug 'https://github.com/scrooloose/syntastic.git'
 
         source ~/.vim/csharp_config.vim
     endif
