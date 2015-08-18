@@ -27,6 +27,8 @@ set expandtab         "Use spaces instead of tabs
 set omnifunc=syntaxcomplete#Complete "Enable omnicompletion
 set clipboard+=unnamed
 
+set tags=tags;
+
 filetype indent on    "Use filetype indentation
 filetype plugin indent on "Allow plugins to use filetype indentation
 syntax on             "Turn on syntax highlighting
