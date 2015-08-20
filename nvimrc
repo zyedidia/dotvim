@@ -39,6 +39,12 @@ let g:neomake_warning_sign = {
             \ 'texthl': 'WarningMsg',
             \ }
 
+let g:neomake_html_tidy_maker = {
+    \ 'args': ['-e', '-q', '--gnu-emacs', 'true', '--show-warnings', 'false'],
+    \ 'errorformat': '%A%f:%l:%c: %trror: %m',
+    \ }
+let g:neomake_html_enabled_makers = ['tidy']
+
 filetype indent on    "Use filetype indentation
 filetype plugin indent on "Allow plugins to use filetype indentation
 syntax on             "Turn on syntax highlighting
