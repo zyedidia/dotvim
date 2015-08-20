@@ -29,6 +29,16 @@ set clipboard+=unnamed
 
 set tags=tags;
 
+let g:neomake_error_sign = {
+            \ 'text': '>>',
+            \ 'texthl': 'ErrorMsg',
+            \ }
+
+let g:neomake_warning_sign = {
+            \ 'text': '>>',
+            \ 'texthl': 'WarningMsg',
+            \ }
+
 filetype indent on    "Use filetype indentation
 filetype plugin indent on "Allow plugins to use filetype indentation
 syntax on             "Turn on syntax highlighting
@@ -108,6 +118,8 @@ nnoremap <Leader>r :Run<CR>
 "Lint the current file (syntax check)
 nnoremap <Leader>s :SynCheck<CR>
 
+nnoremap <Leader>c :syntax sync fromstart<CR>
+
 "Location list pre
 nnoremap <M-[> :lpr<CR>
 "Location list next
@@ -117,7 +129,7 @@ autocmd BufEnter,BufRead *.lang set syn=java
 autocmd BufEnter,BufRead *.elm set syn=haskell
 autocmd FileType julia set commentstring=#%s
 autocmd BufEnter,BufRead term://* call EnterTerminal()
-autocmd! BufWritePost * Neomake
+autocmd! BufWritePost * SynCheck
 " autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#592929
 " autocmd BufEnter * match OverLength /\%80v.*/
 
@@ -137,7 +149,7 @@ let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<C-c>'
 
-let g:move_key_modifier = 'M' "Use alt hjkl to move blocks around
+let g:move_key_modifier = 'C' "Use alt hjkl to move blocks around
 
 let g:ctrlp_show_hidden = 1 "Show hidden files when searching with ctrlp
 if executable("ag")

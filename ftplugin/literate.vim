@@ -29,8 +29,16 @@ function! Exe(...)
 	exec "q"
 endfunc
 
+function! LitHtml()
+    exec "w"
+    exec "silent !lit -html %"
+    exec "silent !open -a \"Safari\" %:r.html"
+    exec "redraw!"
+endfunc
+
 command! -nargs=* Exe :call Exe(<f-args>)
 
 nnoremap <Leader>e :Exe<CR>
 nnoremap <Leader>p :call LitPDF()<CR>
 nnoremap <Leader>h :call LitHTML_reload()<CR>
+nnoremap <Leader>o :call LitHtml()<CR>

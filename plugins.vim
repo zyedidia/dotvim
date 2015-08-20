@@ -54,12 +54,11 @@ Plug 'https://github.com/itchyny/lightline.vim.git'
 Plug 'https://github.com/zyedidia/julialint.vim'
 " Mundo
 Plug 'https://github.com/simnalamburt/vim-mundo.git'
+" Ag
 Plug 'rking/ag.vim'
+" Antlr
 Plug 'https://github.com/jrozner/vim-antlr'
-
-" Plug 'blueyed/vim-diminactive'
-" Plug 'Valloric/YouCompleteMe', { 'for': 'python', 'do': './install.sh' }
-
-" Plug 'https://github.com/Shougo/neocomplcache.vim'
+" Ctrlsf
+Plug 'https://github.com/dyng/ctrlsf.vim'
 
 call plug#end()
