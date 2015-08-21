@@ -33,6 +33,7 @@ set autoread          " Automatically reload the file when it is changed from an
 set nohlsearch        " Don't highlight search results
 set expandtab         " Use spaces instead of tabs
 set omnifunc=syntaxcomplete#Complete " Enable omnicompletion
+set guifont=Monaco\ for\ Powerline
 
 set tags=tags; " Look for tags files
 
@@ -179,7 +180,12 @@ let g:lightline = {
             \ },
             \ 'component_visible_condition': {
             \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-            \ }
+            \ },
+            \ 'component_function': {
+            \   'fugitive': 'LightLineFugitive',
+            \ },
+            \ 'separator': { 'left': '', 'right': '' },
+            \ 'subseparator': { 'left': '', 'right': '' }
             \ }
 
 " Use >> for errors and warnings in Neomake (with slightly different fonts)
@@ -271,3 +277,12 @@ function! Incr()
     normal `<
 endfunction
 vnoremap <C-a> :call Incr()<CR>
+
+" Show the branch in lightline
+function! LightLineFugitive()
+    if exists("*fugitive#head")
+        let _ = fugitive#head()
+        return strlen(_) ? ' '._ : ''
+    endif
+    return ''
+endfunction
