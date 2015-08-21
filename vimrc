@@ -1,5 +1,8 @@
 " Welcome to my vimrc
 
+" Load the vimrc_example
+source $VIMRUNTIME/vimrc_example.vim
+
 " Load all the plugins
 source ~/.nvim/plugins.vim
 
@@ -30,7 +33,6 @@ set autoread          " Automatically reload the file when it is changed from an
 set nohlsearch        " Don't highlight search results
 set expandtab         " Use spaces instead of tabs
 set omnifunc=syntaxcomplete#Complete " Enable omnicompletion
-set clipboard+=unnamed " Use the system clipbord for yank and paste
 
 set tags=tags; " Look for tags files
 
