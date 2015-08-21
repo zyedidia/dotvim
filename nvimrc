@@ -181,7 +181,12 @@ let g:lightline = {
             \ },
             \ 'component_visible_condition': {
             \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-            \ }
+            \ },
+            \ 'component_function': {
+            \   'fugitive': 'LightLineFugitive',
+            \ },
+            \ 'separator': { 'left': '', 'right': '' },
+            \ 'subseparator': { 'left': '', 'right': '' }
             \ }
 
 " Use >> for errors and warnings in Neomake (with slightly different fonts)
@@ -197,9 +202,9 @@ let g:neomake_warning_sign = {
 
 " Some additional options for tidy so it only shows errors
 let g:neomake_html_tidy_maker = {
-    \ 'args': ['-e', '-q', '--gnu-emacs', 'true', '--show-warnings', 'false'],
-    \ 'errorformat': '%A%f:%l:%c: %trror: %m',
-    \ }
+            \ 'args': ['-e', '-q', '--gnu-emacs', 'true', '--show-warnings', 'false'],
+            \ 'errorformat': '%A%f:%l:%c: %trror: %m',
+            \ }
 let g:neomake_html_enabled_makers = ['tidy']
 
 " Set the comment type for julia
@@ -282,3 +287,12 @@ function! Incr()
     normal `<
 endfunction
 vnoremap <C-a> :call Incr()<CR>
+
+" Show the branch in lightline
+function! LightLineFugitive()
+    if exists("*fugitive#head")
+        let _ = fugitive#head()
+        return strlen(_) ? ' '._ : ''
+    endif
+    return ''
+endfunction
