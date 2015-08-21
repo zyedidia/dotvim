@@ -33,7 +33,7 @@ set autoread          " Automatically reload the file when it is changed from an
 set nohlsearch        " Don't highlight search results
 set expandtab         " Use spaces instead of tabs
 set omnifunc=syntaxcomplete#Complete " Enable omnicompletion
-set guifont=Monaco\ for\ Powerline
+set guifont=Monaco\ for\ Powerline:h13
 
 set guifont=Monaco\ for\ Powerline:h13
 
