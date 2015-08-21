@@ -164,20 +164,21 @@ let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 
 " Set some options for the lightline
 let g:lightline = {
-    \ 'active': {
-    \   'left': [ [ 'mode', 'paste' ], ['fugitive', 'relativepath', 'modified' ] ],
-    \ },
-    \ 'inactive': {
-    \   'left': [ [ 'relativepath', 'modified' ] ],
-    \   'right': [ [ 'lineinfo' ], [ 'percent' ] ]
-    \ },
-    \ 'component': {
-    \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
-    \ },
-    \ 'component_visible_condition': {
-    \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-    \ }
-    \ }
+            \ 'active': {
+            \   'left': [ [ 'mode', 'paste' ], ['fugitive', 'relativepath', 'modified' ] ],
+            \   'right': [ [ 'lineinfo'], ['percent'], ['filetype' ] ]
+            \ },
+            \ 'inactive': {
+            \   'left': [ [ 'relativepath', 'modified' ] ],
+            \   'right': [ [ 'lineinfo' ], [ 'percent' ] ]
+            \ },
+            \ 'component': {
+            \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+            \ },
+            \ 'component_visible_condition': {
+            \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+            \ }
+            \ }
 
 " Use >> for errors and warnings in Neomake (with slightly different fonts)
 let g:neomake_error_sign = {
