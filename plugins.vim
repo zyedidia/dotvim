@@ -60,5 +60,7 @@ Plug 'rking/ag.vim'
 Plug 'https://github.com/jrozner/vim-antlr'
 " Ctrlsf
 Plug 'https://github.com/dyng/ctrlsf.vim'
+" Fugitive
+Plug 'https://github.com/tpope/vim-fugitive.git'
 
 call plug#end()
