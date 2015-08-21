@@ -268,8 +268,3 @@ function! Incr()
     normal `<
 endfunction
 vnoremap <C-a> :call Incr()<CR>
-
-" Read any personal configuration
-if filereadable($HOME . "/.nvim/personal_config.vim")
-    source ~/.nvim/personal_config.vim
-endif
