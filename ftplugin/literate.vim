@@ -26,7 +26,6 @@ function! Exe(...)
 	endif
 
 	exec "Run ".args
-	exec "q"
 endfunc
 
 function! LitHtml()
