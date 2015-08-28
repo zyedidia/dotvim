@@ -1,7 +1,7 @@
 " Welcome to my vimrc
 
 " Load all the plugins
-source ~/.nvim/plugins.vim
+source ~/.vim/plugins.vim
 
 "--------------------------
 "|        Settings        |
