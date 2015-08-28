@@ -7,7 +7,12 @@ function! JRun(...)
 
 	execute "w"
 	execute "!javac %"
-	execute "!java %:r ".args
+    if has('nvim')
+        exec "sp"
+        execute "term java %:r ".args
+    else
+        execute "!java %:r ".args
+    endif
 endfunction
 
 command! -nargs=* Run :call JRun(<f-args>)
