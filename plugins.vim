@@ -62,5 +62,7 @@ Plug 'https://github.com/jrozner/vim-antlr'
 Plug 'https://github.com/dyng/ctrlsf.vim'
 " Fugitive
 Plug 'https://github.com/tpope/vim-fugitive.git'
+" Surround
+Plug 'https://github.com/tpope/vim-surround.git'
 
 call plug#end()
