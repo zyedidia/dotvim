@@ -131,6 +131,12 @@ autocmd BufEnter,BufRead *.elm set syn=haskell " Highlight Elm as Haskell
 autocmd BufEnter,BufRead term://* call EnterTerminal() " Go into insert mode when the buffer switches to a terminal
 autocmd! BufWritePost * SynCheck " Check for syntax errors on file write
 
+augroup CursorLine
+    au!
+    au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+    au WinLeave * setlocal nocursorline
+augroup END
+
 
 "---------------------------------------
 "|        Plugin Customizations        |
