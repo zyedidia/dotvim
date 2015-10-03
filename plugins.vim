@@ -62,5 +62,7 @@ Plug 'https://github.com/jrozner/vim-antlr'
 Plug 'https://github.com/dyng/ctrlsf.vim'
 " Fugitive
 Plug 'https://github.com/tpope/vim-fugitive.git'
+" Rust
+Plug 'https://github.com/rust-lang/rust.vim.git'
 
 call plug#end()
