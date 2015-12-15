@@ -1,5 +1,5 @@
 if has('nvim')
-    call plug#begin('~/.nvim/bundle')
+    call plug#begin('~/.config/nvim/bundle')
 else
     call plug#begin('~/.vim/bundle')
 

@@ -3,12 +3,6 @@ function! Lit()
 	exec "silent !lit %"
 endfunc
 
-function! LitHTML_reload()
-	call Lit()
-	exec "silent !osascript ~/.nvim/ftplugin/refresh.scpt"
-	exec "redraw!"
-endfunc
-
 function! LitPDF()
 	call Lit()
 	exec "silent !wkhtmltopdf --page-size Letter -R 0 -L 0 --header-right [page] --margin-top 2cm --margin-left 1cm --margin-right 1cm %:r.html %:r.pdf"

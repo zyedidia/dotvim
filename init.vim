@@ -4,7 +4,7 @@
 source $VIMRUNTIME/vimrc_example.vim
 
 " Load all the plugins
-source ~/.nvim/plugins.vim
+source ~/.config/nvim/plugins.vim
 
 "--------------------------
 "|        Settings        |
@@ -44,18 +44,18 @@ set background=dark " Use a dark background
 colorscheme solarized " Use the solarized colorscheme
 
 " Make an undo directory if it does not exist
-if !isdirectory($HOME . "/.nvim/undo")
-    call mkdir($HOME . "/.nvim/undo", "p")
+if !isdirectory($HOME . "/.config/nvim/undo")
+    call mkdir($HOME . "/.config/nvim/undo", "p")
 endif
-set undodir=~/.vim/undo " Set the undo directory
+set undodir=~/.config/nvim/undo " Set the undo directory
 set undofile " Turn on persistent undo
 set undoreload=10000
 
 set backup
-if !isdirectory($HOME . "/.nvim/backup")
-    call mkdir($HOME . "/.nvim/backup", "p")
+if !isdirectory($HOME . "/.config/nvim/backup")
+    call mkdir($HOME . "/.config/nvim/backup", "p")
 endif
-set backupdir=~/.nvim/backup
+set backupdir=~/.config/nvim/backup
 
 "--------------------------
 "|        Mappings        |
@@ -102,9 +102,9 @@ nnoremap <expr> i IndentWithI()
 nnoremap <Leader>= :call IndentFile()<CR>
 
 " Open nvimrc file
-nnoremap <Leader>v :vsp ~/.nvim/nvimrc<CR>
+nnoremap <Leader>v :vsp ~/.config/nvim/init.vim<CR>
 " Source nvimrc file
-nnoremap <Leader>sv :source ~/.nvim/nvimrc<CR>
+nnoremap <Leader>sv :source ~/.config/nvim/nvimrc<CR>
 
 " Run the current file
 nnoremap <Leader>r :Run<CR>
