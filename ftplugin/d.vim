@@ -6,7 +6,7 @@ function! DRun(...)
     endif
 
     execute "w"
-    execute "!dmd %"
+    execute "!make"
     if has('nvim')
         exec "sp"
         execute "term ./%:r ".args
