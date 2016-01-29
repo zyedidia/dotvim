@@ -111,7 +111,7 @@ nnoremap <Leader>r :Run<CR>
 " Lint the current file (syntax check)
 nnoremap <Leader>s :SynCheck<CR>
 " Fix any syntax highlighting glitches
-nnoremap <Leader>c :syntax sync fromstart<CR>
+nnoremap <Leader>l :syntax sync fromstart<CR>
 " Open the NERDTree with \n
 map <Leader>n :NERDTreeToggle<CR>
 
@@ -217,6 +217,7 @@ let g:neomake_html_enabled_makers = ['tidy']
 call tcomment#DefineType('julia', '# %s')
 " Set the comment type for lua
 call tcomment#DefineType('lua', '-- %s')
+call tcomment#DefineType('d', '// %s')
 
 "------------------------------------
 "|          User commands           |
