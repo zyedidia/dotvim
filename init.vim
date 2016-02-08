@@ -104,7 +104,7 @@ nnoremap <Leader>= :call IndentFile()<CR>
 " Open nvimrc file
 nnoremap <Leader>v :vsp ~/.config/nvim/init.vim<CR>
 " Source nvimrc file
-nnoremap <Leader>sv :source ~/.config/nvim/nvimrc<CR>
+nnoremap <Leader>sv :source ~/.config/nvim/init.vim<CR>
 
 " Run the current file
 nnoremap <Leader>r :Run<CR>

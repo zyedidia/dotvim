@@ -64,5 +64,9 @@ Plug 'https://github.com/dyng/ctrlsf.vim'
 Plug 'https://github.com/tpope/vim-fugitive.git'
 " Rust
 Plug 'https://github.com/rust-lang/rust.vim.git'
+" Html 5
 Plug 'https://github.com/othree/html5.vim.git'
+" Tagbar
+Plug 'https://github.com/majutsushi/tagbar'
+
 call plug#end()
