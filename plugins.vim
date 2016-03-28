@@ -2,14 +2,6 @@ if has('nvim')
     call plug#begin('~/.config/nvim/bundle')
 else
     call plug#begin('~/.vim/bundle')
-
-    if exists("g:csharp")
-        Plug 'https://github.com/tpope/vim-dispatch.git'
-        Plug 'https://github.com/OmniSharp/omnisharp-vim', { 'do': 'cd server && xbuild' }
-        Plug 'https://github.com/scrooloose/syntastic.git'
-
-        source ~/.vim/csharp_config.vim
-    endif
 endif
 
 " Solarized
@@ -68,5 +60,7 @@ Plug 'https://github.com/rust-lang/rust.vim.git'
 Plug 'https://github.com/othree/html5.vim.git'
 " Tagbar
 Plug 'https://github.com/majutsushi/tagbar'
+" Vim-go
+Plug 'https://github.com/fatih/vim-go'
 
 call plug#end()
