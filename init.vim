@@ -145,6 +145,8 @@ augroup END
 set backspace=2
 let delimitMate_expand_cr = 1 " Expand 1 line down on enter pressed
 
+let g:go_fmt_command = "goimports" " Automatically run goimports on save
+
 let loaded_matchparen = 1 " Don't source the match paren plugin
 
 " Multiple cursors mappings to use Ctrl C instead of escape
