@@ -36,10 +36,6 @@ Plug 'https://github.com/kien/ctrlp.vim'
 Plug 'https://github.com/FelikZ/ctrlp-py-matcher.git'
 " Literate
 Plug 'https://github.com/zyedidia/literate.vim', { 'for': 'literate' }
-" Lua
-Plug 'https://github.com/xolox/vim-misc.git' | Plug 'https://github.com/xolox/vim-lua-ftplugin.git'
-" Lua Indent
-Plug 'https://github.com/raymond-w-ko/vim-lua-indent', { 'for': 'lua' }
 " Lightline
 Plug 'https://github.com/itchyny/lightline.vim.git'
 " Julialint
