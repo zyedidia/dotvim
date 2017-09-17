@@ -1,11 +1,15 @@
 This is my Vim configuration
 
-#Installation
+Lately I've been using Neovim but it should work with vanilla Vim as well.
+
+# Installation
+
 To install it execute the following commands
 
 ```
 $ cd ~
-$ git clone https://github.com/zyedidia/dotvim.git ~/.nvim
+$ mkdir -p ~/.config
+$ git clone https://github.com/zyedidia/dotvim.git ~/.config/nvim
 ```
 
 Then run `:PlugInstall` from inside vim.
