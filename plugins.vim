@@ -58,5 +58,7 @@ Plug 'https://github.com/othree/html5.vim.git'
 Plug 'https://github.com/majutsushi/tagbar'
 " Vim-go
 Plug 'https://github.com/fatih/vim-go'
+" Verilog
+Plug 'vhda/verilog_systemverilog.vim'
 
 call plug#end()
