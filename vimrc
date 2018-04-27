@@ -44,7 +44,9 @@ filetype plugin indent on " Allow plugins to use filetype indentation
 syntax on             " Turn on syntax highlighting
 
 set background=dark " Use a dark background
-colorscheme solarized " Use the solarized colorscheme
+" colorscheme solarized " Use the solarized colorscheme
+" let g:molokai_original = 1
+colorscheme molokai " Use the molokai colorscheme
 
 " Persistent undo isn't available on < vim 7.3
 if (v:version > 703)
