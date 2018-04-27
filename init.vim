@@ -1,8 +1,5 @@
 " Welcome to my vimrc
 
-" Load the vimrc_example
-source $VIMRUNTIME/vimrc_example.vim
-
 " Load all the plugins
 source ~/.config/nvim/plugins.vim
 
@@ -11,6 +8,8 @@ source ~/.config/nvim/plugins.vim
 "--------------------------
 
 set showmatch         " Show matching braces
+set hlsearch          " switch on highlighting for the last used search pattern
+set showcmd           " display incomplete commands
 set mat=1             " Set the time to show matching braces to 1 second
 set ignorecase        " Ignore case on searches
 set smartcase         " Use case sensitive search if there is a capital letter in the search
@@ -139,6 +138,30 @@ augroup CursorLine
     au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
     au WinLeave * setlocal nocursorline
 augroup END
+
+" Put these in an autocmd group, so that we can delete them easily.
+augroup vimrcEx
+  autocmd!
+
+  " For all text files set 'textwidth' to 78 characters.
+  autocmd FileType text setlocal textwidth=78
+
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it when the position is invalid or when inside an event handler
+  autocmd BufReadPost *
+    \ if line("'\"") >= 1 && line("'\"") <= line("$") |
+    \   execute "normal! g`\"" |
+    \ endif
+
+augroup END
+
+" Convenient command to see the difference between the current buffer and the
+" file it was loaded from, thus the changes you made.
+" Only define it when not defined already.
+if !exists(":DiffOrig")
+  command DiffOrig vert new | set buftype=nofile | read ++edit # | 0d_ | diffthis
+                 \ | wincmd p | diffthis
+endif
 
 
 "---------------------------------------
