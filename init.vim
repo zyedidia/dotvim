@@ -242,10 +242,10 @@ let g:neomake_html_tidy_maker = {
 let g:neomake_html_enabled_makers = ['tidy']
 
 " Set the comment type for julia
-call tcomment#DefineType('julia', '# %s')
+" call tcomment#Define('julia', '# %s')
 " Set the comment type for lua
-call tcomment#DefineType('lua', '-- %s')
-call tcomment#DefineType('d', '// %s')
+" call tcomment#Define('lua', '-- %s')
+" call tcomment#Define('d', '// %s')
 
 "------------------------------------
 "|          User commands           |
