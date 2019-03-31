@@ -60,5 +60,8 @@ Plug 'https://github.com/majutsushi/tagbar'
 Plug 'https://github.com/fatih/vim-go'
 " Verilog
 Plug 'vhda/verilog_systemverilog.vim'
+" Vim pandoc
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
 
 call plug#end()
