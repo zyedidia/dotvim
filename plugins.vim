@@ -61,7 +61,10 @@ Plug 'https://github.com/fatih/vim-go'
 " Verilog
 Plug 'vhda/verilog_systemverilog.vim'
 " Vim pandoc
-Plug 'vim-pandoc/vim-pandoc'
+" Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'calviken/vim-gdscript3'
+Plug 'jdonaldson/vaxe'
+Plug 'Chiel92/vim-autoformat'
 
 call plug#end()

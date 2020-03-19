@@ -32,6 +32,8 @@ set autoread          " Automatically reload the file when it is changed from an
 set nohlsearch        " Don't highlight search results
 set expandtab         " Use spaces instead of tabs
 set omnifunc=syntaxcomplete#Complete " Enable omnicompletion
+set nofoldenable
+set autowrite
 
 set tags=tags; " Look for tags files
 
@@ -240,6 +242,8 @@ let g:neomake_html_tidy_maker = {
             \ 'errorformat': '%A%f:%l:%c: %trror: %m',
             \ }
 let g:neomake_html_enabled_makers = ['tidy']
+
+let g:pandoc#syntax#conceal#use = 0
 
 " Set the comment type for julia
 " call tcomment#Define('julia', '# %s')
