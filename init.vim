@@ -134,6 +134,7 @@ autocmd BufEnter,BufRead *.elm set syn=haskell " Highlight Elm as Haskell
 autocmd BufEnter,BufRead term://* call EnterTerminal() " Go into insert mode when the buffer switches to a terminal
 autocmd BufEnter,BufRead *.v set noexpandtab
 autocmd! BufWritePost * SynCheck " Check for syntax errors on file write
+au BufWrite *.hx :Autoformat
 
 augroup CursorLine
     au!
@@ -176,6 +177,9 @@ let delimitMate_expand_cr = 1 " Expand 1 line down on enter pressed
 let g:go_fmt_command = "goimports" " Automatically run goimports on save
 
 let loaded_matchparen = 1 " Don't source the match paren plugin
+
+let g:formatdef_haxe = '"haxelib run formatter --stdin -s ."'
+let g:formatters_haxe = ['haxe']
 
 " Multiple cursors mappings to use Ctrl C instead of escape
 let g:multi_cursor_use_default_mapping=0
