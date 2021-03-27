@@ -9,7 +9,7 @@ source ~/.config/nvim/plugins.vim
 
 set showmatch         " Show matching braces
 set hlsearch          " switch on highlighting for the last used search pattern
-set showcmd           " display incomplete commands
+set showcmd           " Show the current command in the bottom right
 set mat=1             " Set the time to show matching braces to 1 second
 set ignorecase        " Ignore case on searches
 set smartcase         " Use case sensitive search if there is a capital letter in the search
@@ -20,7 +20,6 @@ set shiftwidth=4      " Use 4 space tabs
 set guifont=Monaco:h13 " Use Menlo size 13 font
 set incsearch         " Incremental search: jump to the first occurrence of search while the user is still searching
 set mouse=a           " Enable the mouse
-set showcmd           " Show the current command in the bottom right
 set autoindent        " Use autoindentation
 set splitbelow        " Make horizontal splits below instead of above
 set splitright        " Make vertical splits on the right
