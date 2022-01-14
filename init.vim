@@ -223,9 +223,7 @@ let g:lightline = {
             \ },
             \ 'component_function': {
             \   'fugitive': 'LightLineFugitive',
-            \ },
-            \ 'separator': { 'left': '', 'right': '' },
-            \ 'subseparator': { 'left': '', 'right': '' }
+            \ }
             \ }
 
 " Use >> for errors and warnings in Neomake (with slightly different fonts)
