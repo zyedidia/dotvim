@@ -131,7 +131,7 @@ let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1 " Use a bar in insert mode and a block in no
 autocmd BufEnter,BufRead *.lang set syn=java " Highlight Lang as Java
 autocmd BufEnter,BufRead *.elm set syn=haskell " Highlight Elm as Haskell
 autocmd BufEnter,BufRead term://* call EnterTerminal() " Go into insert mode when the buffer switches to a terminal
-autocmd BufEnter,BufRead *.v set noexpandtab
+" autocmd BufEnter,BufRead *.sv set shiftwidth=2
 autocmd! BufWritePost * SynCheck " Check for syntax errors on file write
 au BufWrite *.hx :Autoformat
 

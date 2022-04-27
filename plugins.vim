@@ -67,6 +67,7 @@ Plug 'calviken/vim-gdscript3'
 Plug 'jdonaldson/vaxe'
 Plug 'Chiel92/vim-autoformat'
 Plug 'ziglang/zig.vim'
+Plug 'editorconfig/editorconfig-vim'
 
 
 call plug#end()
