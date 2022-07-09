@@ -68,6 +68,8 @@ Plug 'jdonaldson/vaxe'
 Plug 'Chiel92/vim-autoformat'
 Plug 'ziglang/zig.vim'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
 
 
 call plug#end()
