@@ -69,7 +69,7 @@ nnoremap <left> <C-w>h
 nnoremap <right> <C-w>l
 
 " Open the error that the cursor is on in the location list
-nnoremap <CR> :execute "ll ".line('.')<CR>
+" nnoremap <CR> :execute "ll ".line('.')<CR>
 
 " Split a line
 nnoremap K i<Enter><Esc>
