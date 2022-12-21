@@ -129,6 +129,8 @@ let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1 " Use a bar in insert mode and a block in no
 "------------------------------
 
 autocmd BufEnter,BufRead *.lang set syn=java " Highlight Lang as Java
+autocmd BufEnter,BufRead *.knit set ft=lua
+autocmd BufEnter,BufRead Knitfile set ft=lua
 autocmd BufEnter,BufRead *.elm set syn=haskell " Highlight Elm as Haskell
 autocmd BufEnter,BufRead [tT]akefile set syn=tcl " Highlight take as tcl
 autocmd BufEnter,BufRead *.tk set syn=tcl " Highlight take as tcl
