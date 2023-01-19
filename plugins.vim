@@ -27,7 +27,7 @@ Plug 'https://github.com/sickill/vim-pasta'
 " Snake
 Plug 'https://github.com/zyedidia/vim-snake', { 'on': 'Snake' }
 " Neomake
-Plug 'https://github.com/benekastah/neomake'
+Plug 'https://github.com/zyedidia/neomake'
 " Move
 Plug 'https://github.com/matze/vim-move'
 " Ctrlp
