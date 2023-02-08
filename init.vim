@@ -279,7 +279,7 @@ let g:pandoc#syntax#conceal#use = 0
 " call tcomment#Define('julia', '# %s')
 " Set the comment type for lua
 " call tcomment#Define('lua', '-- %s')
-" call tcomment#Define('d', '// %s')
+call tcomment#type#Define('d', '// %s')
 
 "------------------------------------
 "|          User commands           |
