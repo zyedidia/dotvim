@@ -129,8 +129,8 @@ let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1 " Use a bar in insert mode and a block in no
 "------------------------------
 
 autocmd BufEnter,BufRead *.lang set syn=java " Highlight Lang as Java
-autocmd BufEnter,BufRead *.knit set ft=lua
-autocmd BufEnter,BufRead [kK]nitfile set ft=lua
+autocmd BufEnter,BufRead *.knit set ft=lua | set syn=knit
+autocmd BufEnter,BufRead [kK]nitfile set ft=lua | set syn=knit
 autocmd BufEnter,BufRead *.elm set syn=haskell " Highlight Elm as Haskell
 autocmd BufEnter,BufRead term://* call EnterTerminal() " Go into insert mode when the buffer switches to a terminal
 " autocmd BufEnter,BufRead *.sv set shiftwidth=2
