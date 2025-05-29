@@ -128,6 +128,7 @@ let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1 " Use a bar in insert mode and a block in no
 "|        Autocommands        |
 "------------------------------
 
+autocmd BufEnter,BufRead *.ha set tabstop=4
 autocmd BufEnter,BufRead *.lang set syn=java " Highlight Lang as Java
 autocmd BufEnter,BufRead *.knit set ft=lua | set syn=knit
 autocmd BufEnter,BufRead [kK]nitfile set ft=lua | set syn=knit
@@ -365,3 +366,5 @@ function! LightLineFugitive()
     endif
     return ''
 endfunction
+
+autocmd FileType asm setlocal expandtab

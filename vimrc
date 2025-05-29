@@ -60,10 +60,10 @@ if (v:version > 703)
 endif
 
 set backup
-if !isdirectory($HOME . "/.nvim/backup")
-    call mkdir($HOME . "/.nvim/backup", "p")
+if !isdirectory($HOME . "/.vim/backup")
+    call mkdir($HOME . "/.vim/backup", "p")
 endif
-set backupdir=~/.nvim/backup
+set backupdir=~/.vim/backup
 
 "--------------------------
 "|        Mappings        |
@@ -288,3 +288,5 @@ function! LightLineFugitive()
     endif
     return ''
 endfunction
+
+autocmd FileType asm setlocal expandtab
