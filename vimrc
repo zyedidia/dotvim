@@ -34,6 +34,7 @@ set nohlsearch        " Don't highlight search results
 set expandtab         " Use spaces instead of tabs
 set omnifunc=syntaxcomplete#Complete " Enable omnicompletion
 set guifont=Monaco\ for\ Powerline:h13
+set cino=N-s " Don't indent C++ namespaces
 
 set guifont=Monaco\ for\ Powerline:h13
 

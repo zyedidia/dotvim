@@ -33,6 +33,7 @@ set expandtab         " Use spaces instead of tabs
 set omnifunc=syntaxcomplete#Complete " Enable omnicompletion
 set nofoldenable
 set autowrite
+set cino=N-s " Don't indent C++ namespaces
 
 set tags=tags; " Look for tags files
 
